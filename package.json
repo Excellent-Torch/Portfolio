@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://https://excellent-torch.github.io/Portfolio",
+  "homepage": "https://excellent-torch.github.io/Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
