@@ -9,9 +9,9 @@ const Navbar = () => {
         <p className="navbar-subline">Game/AI Developer</p>
       </div>
       <ul className="navbar-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" className="navbar-button">About</a></li>
+        <li><a href="#projects" className="navbar-button">Projects</a></li>
+        <li><a href="#contact" className="navbar-button">Contact</a></li>
       </ul>
     </nav>
   );
