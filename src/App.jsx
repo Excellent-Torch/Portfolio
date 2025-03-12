@@ -2,7 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.jsx";
 
 const RotatingCube = () => {
   const meshRef = useRef();
@@ -26,7 +26,6 @@ const App = () => {
   return (
     <>
     <Navbar />
-    
     <Canvas style={{height: "100vh", width: "100vw", alignContent: "center", display: "flex", justifyContent: "center"}}>
       
       <OrbitControls enableZoom enablePan enableRotate />
