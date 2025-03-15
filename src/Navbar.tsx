@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './css/Navbar.css';
 import menuIcon from './assets/dropdown-menu.png'; // Adjust the path as needed
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {

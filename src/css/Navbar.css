@@ -1,99 +1,99 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 2rem;
-  background-color: #333333d8;
-  
-  color: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: #333333d8;
+
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
 }
 
 .navbar-logo a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .navbar-subline {
-  color: white;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+    color: white;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
 }
 
 .navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 }
 
 .navbar-button {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-  align-self: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: center;
 }
 
 .navbar-button:hover {
-  background-color: white;
-  color: #333;
+    background-color: white;
+    color: #333;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .navbar {
+.navbar {
     flex-direction: column;
     justify-content: space-between;
     align-items: center; /* Center the navbar */
-  }
+}
 
-  .navbar-toggle {
+.navbar-toggle {
     display: block;
     cursor: pointer;
     font-size: 1.5rem;
     margin-top: 0.5rem;
     align-self: center; /* Center the icon */
-  }
+}
 
-  .navbar-toggle img {
+.navbar-toggle img {
     align-self: center; /* Center the icon */
     width: 30px; /* Adjust the size as needed */
     height: 30px; /* Adjust the size as needed */
-  }
+}
 
-  .navbar-links {
+.navbar-links {
     flex-direction: column;
     width: 100%;
     display: none;
     align-items: center; /* Center the buttons */
-  }
+}
 
-  .navbar-links.open {
+.navbar-links.open {
     display: flex;
-  }
+}
 
-  .navbar-links li {
+.navbar-links li {
     width: 100%;
     text-align: center;
-  }
+}
 
-  .navbar-button {
+.navbar-button {
     width: auto; /* Adjust width to center the buttons */
     margin-right: 2rem; /* Add margin to the buttons */
     padding: 0.35rem 1rem; /* Add padding to the buttons */
-  }
+}
 }
 
 @media (min-width: 769px) {
-  .navbar-toggle {
+.navbar-toggle {
     display: none;
-  }
+}
 }
