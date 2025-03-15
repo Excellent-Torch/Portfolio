@@ -23,6 +23,15 @@ const RotatingCube = () => {
   );
 };
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * The App component serves as the main entry point of the application.
+ * It renders a navigation bar, a 3D canvas with a rotating cube, and 
+ * three sections: About, Projects, and Contact. The 3D canvas utilizes 
+ * react-three/fiber and drei for rendering and controlling the scene.
+ */
+
+/******  fc0d8b9c-4375-4cda-94a3-13d710a0882a  *******/
 const App = () => {
   return (
     <>
@@ -33,20 +42,26 @@ const App = () => {
         <color attach="background" args={["black"]} />
         <RotatingCube />
       </Canvas>
-      <div className="content">
+      
+      <div className="section">
         <section id="about" className="section-about">
           <h2>About</h2>
           <p>This is the about section.</p>
         </section>
+      </div>
+      <div className="section">
         <section id="projects" className="section-projects">
           <h2>Projects</h2>
           <p>This is the projects section.</p>
         </section>
+      </div>
+      <div className="section">
         <section id="contact" className="section-contact">
           <h2>Contact</h2>
           <p>This is the contact section.</p>
         </section>
       </div>
+      
     </>
   );
 };
