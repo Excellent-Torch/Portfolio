@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
 import Navbar from "./Navbar.tsx";
 import './css/App.css';
