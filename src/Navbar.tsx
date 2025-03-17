@@ -12,8 +12,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">Ishan Madhuranga</a>
-        <p className="navbar-subline">Game/AI Developer</p>
+        <a href="/">|-_-|</a>
+        
+        {/* <p className="navbar-subline">Game/AI Developer</p> */}
       </div>
       <div className="navbar-toggle" onClick={toggleMenu}>
         <img src={menuIcon} alt="Menu Icon" />
