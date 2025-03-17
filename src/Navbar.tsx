@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
         <img src={menuIcon} alt="Menu Icon" />
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
+        <li><a href="#home" className="navbar-button">Home</a></li>
         <li><a href="#about" className="navbar-button">About</a></li>
         <li><a href="#projects" className="navbar-button">Projects</a></li>
         <li><a href="#contact" className="navbar-button">Contact</a></li>

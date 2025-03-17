@@ -2,106 +2,125 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    background-color: #333333d8;
-
+    padding: 0.75rem 2rem;
+    background-color: #3333335d;
     color: white;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 5;
-}
-
-.navbar-logo a {
+  }
+  
+  .navbar-logo a {
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.navbar-subline {
+    font-size: 1.75rem;
+  }
+  
+  .navbar-subline {
     color: white;
     font-size: 0.875rem;
     margin-top: 0.25rem;
-}
-
-.navbar-links {
+  }
+  
+  .navbar-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
-    width: 90%;
-}
-
-.navbar-button {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid white;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-button:hover {
+  }
+  
+  .navbar-button {
+    color: white;
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0;
+    border-radius: 5px;
+    transition: background-color 0.45s, color 0.45s, font-size 0.45s;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .navbar-button::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
     background-color: white;
-    color: #333;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-.navbar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center the navbar */
-}
-
-.navbar-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    align-self: center; /* Center the icon */
-}
-
-.navbar-toggle img {
-    align-self: center; /* Center the icon */
-    width: 30px; /* Adjust the size as needed */
-    height: 30px; /* Adjust the size as needed */
-}
-
-.navbar-links {
-    flex-direction: column;
+    
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 350ms ease-in-out;
+  }
+  
+  .navbar-button:hover::after {
     width: 100%;
-    display: none;
-    align-items: center; /* Center the buttons */
-    justify-content: center;
-    width: 100%;
-}
-
-.navbar-links.open {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.navbar-links li {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-}
-
-.navbar-button {
-    width: 100%; /* Adjust width to center the buttons */
-     /* Add margin to the buttons */
-    padding: 0.35rem 0.5rem; /* Add padding to the buttons */
-    margin-right: 2rem;
-}
-}
-
-@media (min-width: 769px) {
-.navbar-toggle {
-    display: none;
-}
-}
+    
+  }
+  
+  .navbar-button:hover {
+    background-color: rgba(112, 0, 0, 0);
+    color: #3dcbfec7;
+    font-size: 1.35rem;
+    transition: font-size 0.8s ease-in-out;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center; /* Center the navbar */
+    }
+  
+    .navbar-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      align-self: center; /* Center the icon */
+    }
+  
+    .navbar-toggle img {
+      align-self: center; /* Center the icon */
+      width: 30px; /* Adjust the size as needed */
+      height: 30px; /* Adjust the size as needed */
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+      align-items: center; /* Center the buttons */
+      justify-content: center;
+    }
+  
+    .navbar-links.open {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .navbar-links li {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .navbar-button {
+      width: 100%; /* Adjust width to center the buttons */
+      padding: 0.35rem 0.5rem; /* Add padding to the buttons */
+      margin-right: 2rem;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar-toggle {
+      display: none;
+    }
+  }
+  
