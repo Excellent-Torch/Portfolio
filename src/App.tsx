@@ -12,7 +12,7 @@ import gifUnreal from './assets/unreal.gif';
 import gifDeveloper from './assets/developer.gif';
 import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
-import gifDance from './assets/dance.gif';
+import gifDance from './assets/dancing.gif';
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
