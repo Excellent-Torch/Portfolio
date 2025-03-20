@@ -24,8 +24,8 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Ensure the canvas is behind the content */
-  pointer-events: none; /* Allow interactions to pass through */
+  z-index: 2; /* Ensure the canvas is behind the content */
+  pointer-events: auto; /* Allow interactions to pass through */
 }
 
 .video-canvas {
@@ -58,8 +58,7 @@ p {
 }
 
 .section-home {
-  
-  padding-block: 19%;
+  padding-block: 14%;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -67,34 +66,54 @@ p {
   text-align: center;
   object-fit: cover;
   background-color: rgba(255, 255, 255, 0.25); /* Gray with transparency */
+  z-index: -1;
 }
 
 .section-about {
   display: flex;
   flex-direction: row;
   align-items: left;
-  padding: 2rem;
   background: #ffffff;
   clip-path: polygon(0 0, 100% 0, calc(100% - var(--p)) 100%, 0 100%);
 }
+.section-about-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: #000000;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--p)) 100%, 0 100%);
+}
+
+.section-about-skills .text-content {
+
+  width: 50%;
+  padding-left: 25%;
+  text-align: center;
+  z-index: 1; /* Ensure text content is above the image */
+}
 
 .section-about .text-content {
+
   width: 50%;
+  padding-left: 5%;
+  z-index: 1; /* Ensure text content is above the image */
 }
 
 .section-about .image-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20%;
+  justify-content: right;
+  align-items: right;
+  padding-left: 30%;
   width: 25%;
-
 }
 
 .section-about img {
   max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border: none;
 }
 
 .section-about h1 {
@@ -165,4 +184,20 @@ p {
   100% {
     opacity: 1;
   }
+}
+
+/* MOBILE VIEW STUFF */
+@media (max-width: 768px) {
+  .section-about {
+    flex-direction: column; /* Change to column layout */
+  }
+
+  .section-about .text-content {
+    width: 100%; /* Full width on mobile view */
+    padding-left: 0;
+  }
+  .section-about .image-content {
+    display: none; /* Hide the image on mobile view */
+  }
+
 }
