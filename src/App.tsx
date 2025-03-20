@@ -10,6 +10,9 @@ import aboutImage from './assets/aboutImage.jpg';
 import gifDoom from './assets/doom.gif';
 import gifUnreal from './assets/unreal.gif';
 import gifDeveloper from './assets/developer.gif';
+import gifAI from './assets/ai.gif';
+import gifWork from './assets/work.gif';
+import gifDance from './assets/dance.gif';
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -58,7 +61,7 @@ const App: React.FC = () => {
           
           <h2>
             <div className="typewriter-container-subline">
-              <TypewriterText text="AI/Game" speed={600} showCaret={true} loop={true}/>
+              <TypewriterText text="AI|Game" speed={600} showCaret={true} loop={true}/>
             </div>
               <TypewriterText text="Developer" speed={100} showCaret={false} loop={false}/>
           </h2>
@@ -67,16 +70,25 @@ const App: React.FC = () => {
 
         <section id="about" className="section section-about" ref={(el) => { sectionsRef.current[1] = el as HTMLDivElement; }}> 
           <div className="text-content">
-            <h1>My Name is Ishan Madhuranga,</h1>
+            <h1>Greetings!</h1>
+            <h1> 
+              My Name is Ishan Madhuranga,</h1>
             <p>
-              Specialized in <strong>Game Development and AI</strong>, I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
+              Specialized in <strong>Game Development and AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
               With hands-on experience designing <strong>Multiplayer</strong> games using <strong>Unreal Engine 5</strong> <img src={gifUnreal} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I enjoy pushing the boundaries of interactive and AI-powered experiences.
             </p>
             <p>
-            I am currently working as a <strong>Game Developer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> in a part-time internship, contributing to the remake of a classic game in collaboration with its original creator by incorporating a fresh perspective and modern technologies. Additionally, I am developing my own <strong>Third-Person Multiplayer Shooter</strong> game as a Solo Dev, featuring optimized <strong>Net Code</strong> and unique <strong>Gameplay Mechanics.</strong>
+            As a Fresh Graduate, I am currently working as a <strong>Game Developer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> in a part-time internship, contributing to the remake of a classic game in collaboration with its original creator by incorporating a fresh perspective and modern technologies. Additionally, I am developing my own <strong>Third-Person Multiplayer Shooter</strong> game as a Solo Dev, featuring optimized <strong>Net Code</strong> and unique <strong>Gameplay Mechanics.</strong>
             <img src={gifDoom} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
             </p>
-            <h2>Contact Me! (InProgress)</h2> 
+            <p style={{alignItems: 'center', fontSize: '25px' }}>-| Open to <span></span>  
+              <div className="typewriter-container-headline" style={{ color: 'black'}}>
+                <TypewriterText text="Work" speed={1200} showCaret={true} loop={false}/>
+              </div> 
+              <img src={gifWork} alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
+              |-
+            </p>
+          
           </div>
           <div className="image-content">
             <img src={aboutImage} alt="About" />
@@ -84,18 +96,26 @@ const App: React.FC = () => {
           
         </section>
         
-        <section id="about" className="section section-about-skills" ref={(el) => { sectionsRef.current[2] = el as HTMLDivElement; }}> 
+        <section id="about" className="section section-about-skills" ref={(el) => { sectionsRef.current[2] = el as HTMLDivElement; }}>
+        <div className="image-content">
+          <img src={gifDance} alt="GIF 1"/>
+        </div> 
         <div className="text-content">
-        <h2>
-            <div className="typewriter-container-headline">
-              <TypewriterText text="Skills" speed={600} showCaret={false} loop={true}/>
-            </div>
-            <p>C++, Python, Unreal Engine 5, C# (InProgress)</p>
-        </h2>
+          <h2>
+              <div className="typewriter-container-headline">
+                <TypewriterText text="Relevant Skills" speed={100} showCaret={false} loop={true}/>
+              </div> 
+          </h2>
+          <p style={{textAlign: 'left', fontSize: '20px' }}>
+              <ul>
+                <li>C++ (ONNX Runtime, OpenCV, Unreal Engine)</li>
+                <li>Python (PyTorch, NumPy, Tensorflow, OpenCV, Flask)</li>
+                <li>C# (UI, Standalone Apps)</li>
+                <li>CCNA/MCSA (Routing, Switching, Security)</li>            
+              </ul>
+          </p>
         </div>
-          
         </section>
-
 
         <section id="projects" className="section section-projects" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}> 
           <h2>Projects</h2>
