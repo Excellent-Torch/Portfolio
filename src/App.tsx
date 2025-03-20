@@ -10,7 +10,7 @@ import aboutImage from './assets/aboutImage.jpg';
 import gifDoom from './assets/doom.gif';
 import gifUnreal from './assets/unreal.gif';
 import gifDeveloper from './assets/developer.gif';
-import gifAI from './assets/ai.gif';
+import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
 import gifDance from './assets/dance.gif';
 
