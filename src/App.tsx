@@ -13,6 +13,7 @@ import gifDeveloper from './assets/developer.gif';
 import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
 import gifDance from './assets/dancing.gif';
+import gifRodGameplay from './assets/rodgameplay.gif';
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -100,7 +101,7 @@ const App: React.FC = () => {
         <div className="image-content">
           <img src={gifDance} alt="GIF 1"/>
         </div> 
-        <div className="text-content">
+        <div className="text-content" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}>
           <h2>
               <div className="typewriter-container-headline">
                 <TypewriterText text="Relevant Skills" speed={100} showCaret={false} loop={true}/>
@@ -117,11 +118,34 @@ const App: React.FC = () => {
         </div>
         </section>
 
-        <section id="projects" className="section section-projects" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}> 
-          <h2>Projects</h2>
-          <p>This is the projects section.</p>
+        <section id="projects" className="section section-projects" ref={(el) => { sectionsRef.current[4] = el as HTMLDivElement; }}> 
+          
+          <div className="text-content">
+          <h2 > 
+              <div className="typewriter-container-headline" style={{textAlign: 'center', color: 'green'}}>
+                <TypewriterText text="Projects" speed={900} showCaret={true} loop={false}/>
+              </div> 
+          </h2>
+          <h3 style={{textAlign: 'left', fontSize: '25px' }}>
+              Runes Of Demons (Under Development)
+          </h3>
+          <p style={{textAlign: 'left', fontSize: '20px' }}>Creator of the game Runes of Demons, Sri Lanka's First Ever Third Person Multiplayer
+game made by a Solo Game Developer. All the core mechanics were done using C++
+with proper lag compensation.</p>
+
+          <p style={{textAlign: 'left', fontSize: '20px' }}>
+              <ul>
+                <li><strong>Engine:</strong> Unreal Engine 5.5+</li>
+                <li><strong>Languages:</strong> C++ & Blueprints</li>
+                <li><strong>Libs:</strong> Advance Steam Online Subsystem</li>        
+              </ul>
+          </p>
+        </div>
+        <div className="image-content">
+            <img src={gifRodGameplay} style={{ width: '600px', height: '360px', marginRight: '250px', marginTop: '50px', marginBottom: '50px' }} alt="GIF 1"/>
+        </div> 
         </section>
-        <section id="contact" className="section section-contact" ref={(el) => { sectionsRef.current[4] = el as HTMLDivElement; }}> 
+        <section id="contact" className="section section-contact" ref={(el) => { sectionsRef.current[5] = el as HTMLDivElement; }}> 
           <h2>Contact</h2>
           <p>This is the contact section.</p>
         </section>
