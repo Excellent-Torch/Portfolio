@@ -268,8 +268,6 @@ p {
   }
   .section-projects .image-content {
     display: row; /* Hide the image on mobile view */
-    left: 50%;
-    right: 50%;
     width: 90%;
     justify-content: center;
     
