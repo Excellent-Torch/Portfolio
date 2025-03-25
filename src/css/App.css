@@ -263,7 +263,7 @@ p {
   }
 
   .section-projects .text-content {
-    width: 90%; /* Full width on mobile view */
+    width: 80%; /* Full width on mobile view */
     justify-content: center;
   }
   .section-projects .image-content {
