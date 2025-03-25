@@ -263,12 +263,12 @@ p {
   }
 
   .section-projects .text-content {
-    width: 100%; /* Full width on mobile view */
-    padding-left: 0;
+    width: 90%; /* Full width on mobile view */
+    justify-content: center;
   }
   .section-projects .image-content {
-    display: row; /* Hide the image on mobile view */
-    width: 90%;
+    flex-direction: column;
+    width: 50%;
     justify-content: center;
     
 
