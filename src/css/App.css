@@ -199,11 +199,11 @@ p {
 .typewriter-container-headline {
   display: inline-flex;
   align-items: center;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .typewriter-container-subline {
-  color: #3dcbfebc;
+  color: #3dcbfee2;
   display: inline-flex;
   align-items: center;
 }

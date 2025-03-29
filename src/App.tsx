@@ -81,19 +81,19 @@ const App: React.FC = () => {
             </p>
             <p>
             As a Fresh Graduate, I am currently working as a <strong>Game Developer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> in a part-time internship, contributing to the remake of a classic game in collaboration with its original creator by incorporating a fresh perspective and modern technologies. Additionally, I am developing my own <strong>Third-Person Multiplayer Shooter</strong> game as a Solo Dev, featuring optimized <strong>Net Code</strong> and unique <strong>Gameplay Mechanics.</strong>
-            <img src={gifDoom} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
+            <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
             </p>
             <p style={{alignItems: 'center', fontSize: '25px' }}>-| Open to <span></span>  
               <div className="typewriter-container-headline" style={{ color: 'black'}}>
                 <TypewriterText text="Work" speed={1200} showCaret={true} loop={false}/>
               </div> 
-              <img src={gifWork} alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
+              <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
               |-
             </p>
           
           </div>
           <div className="image-content">
-            <img src={aboutImage} alt="About" />
+            <img src={aboutImage} loading="lazy" alt="About" />
           </div>
           
         </section>
