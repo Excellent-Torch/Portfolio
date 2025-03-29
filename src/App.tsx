@@ -14,6 +14,7 @@ import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
 import gifDance from './assets/dancing.gif';
 import gifRodGameplay from './assets/rodgameplay.gif';
+import gifFNST from './assets/fnst.gif';
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -99,7 +100,7 @@ const App: React.FC = () => {
         
         <section id="about" className="section section-about-skills" ref={(el) => { sectionsRef.current[2] = el as HTMLDivElement; }}>
         <div className="image-content">
-          <img src={gifDance} alt="GIF 1"/>
+          <img src={gifDance} loading="lazy" alt="GIF 1"/>
         </div> 
         <div className="text-content" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}>
           <h2>
@@ -130,7 +131,7 @@ const App: React.FC = () => {
               Runes Of Demons (Under Development)
           </h3>
           <p style={{textAlign: 'left', fontSize: '20px' }}>Creator of the game Runes of Demons, Sri Lanka's First Ever Third Person Multiplayer
-game made by a Solo Game Developer. All the core mechanics were done using C++
+game made as a Solo Dev. All the core mechanics were done using C++
 with proper lag compensation.</p>
 
           <p style={{textAlign: 'left', fontSize: '20px' }}>
@@ -142,9 +143,34 @@ with proper lag compensation.</p>
           </p>
         </div>
         <div className="image-content">
-            <img src={gifRodGameplay} style={{ width: '600px', height: '360px', marginRight: '250px', marginTop: '50px', marginBottom: '50px' }} alt="GIF 1"/>
-        </div> 
+            <img src={gifRodGameplay} loading="lazy" style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }} alt="GIF 1"/>
+        </div>
+        
+        <div className="text-content additional-content">
+          <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
+            Real-Time Fast Neural Style Transfer in a 3D Environment
+          </h3>
+
+          <p style={{textAlign: 'left', fontSize: '20px' }}>
+            Developed a custom transformer model for real-time neural style transfer system for 3D environments, integrating deep learning techniques to apply artistic styles dynamically to 3D scenes in unreal engine. Focused on optimizing performance to achieve seamless rendering while maintaining visual quality.
+          </p>
+          <p style={{textAlign: 'left', fontSize: '20px' }}>
+              <ul>
+                <li><strong>Languages:</strong> Python, C++ & Blueprints</li>
+                <li><strong>Libs:</strong> PyTorch, Tensorflow, OnnxRuntime, Numpy, Pillow</li>
+                <li><strong>Notebooks:</strong> Google Colab, Jupyter Notebook</li>        
+              </ul>
+          </p>
+        <div className="image-content">
+            <img src={gifFNST} loading="lazy" style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }} alt="GIF 1"/>
+        </div>
+
+
+        </div>
+        
         </section>
+
+
         <section id="contact" className="section section-contact" ref={(el) => { sectionsRef.current[5] = el as HTMLDivElement; }}> 
           <h2>Contact</h2>
           <p>This is the contact section.</p>
