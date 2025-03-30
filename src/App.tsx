@@ -1,10 +1,17 @@
-import { Canvas } from "@react-three/fiber";
-import React, { useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
+//import { Canvas } from "@react-three/fiber";
+//import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
+//import { LogoModel } from "./LogoModel";
+// 3D Stuff End
+
+import React, { useEffect, useRef, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import Navbar from "./Navbar";
 import './css/App.css';
-import { LogoModel } from "./LogoModel";
+
 import background from "./assets/dandan.mp4"; 
 import TypewriterText from './TypewriterText';
 import Projects from './pages/Projects';
@@ -19,6 +26,13 @@ import gifDance from './assets/dancing.gif';
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
+  const { ref, inView } = useInView();
+  const [animate, setAnimate] = useState(false);
+
+  const handleTouchStart = () => {
+    // Trigger the animation on touch start
+    setAnimate(true);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -74,12 +88,27 @@ const App: React.FC = () => {
               </h2>
               </div> 
             </section>
-
-            <section id="about" className="section section-about" ref={(el) => { sectionsRef.current[1] = el as HTMLDivElement; }}> 
-              <div className="text-content">
+            
+            <section id="about" className="section section-about" ref={(el) => { sectionsRef.current[1] = el as HTMLDivElement; }}>
+              <motion.div className="text-content"
+                      ref={ref}
+                      initial={{ opacity: 0, y: 80 }}
+                      animate={inView || animate ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+                      transition={{ duration: 0.5 }}
+                      onTouchStart={handleTouchStart}
+              >
+                <motion.div
+                      ref={ref}
+                      initial={{ opacity: 0, y: -30 }}
+                      animate={inView || animate ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+                      transition={{ duration: 2 }}
+                      onTouchStart={handleTouchStart}
+                >
                 <h1>Greetings!</h1>
                 <h1> 
                   My Name is Ishan Madhuranga,</h1>
+
+                  </motion.div>
                 <p>
                   Specialized in <strong>Game Development and AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
                   With hands-on experience designing <strong>Multiplayer</strong> games using <strong>Unreal Engine 5</strong> <img src={gifUnreal} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I enjoy pushing the boundaries of interactive and AI-powered experiences.
@@ -89,26 +118,40 @@ const App: React.FC = () => {
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   
-                <div className="typewriter-container-headline" style={{ color: 'black'}}>
-                    <p style={{alignItems: 'center', fontSize: '25px' }}>-| Open to <span></span>
-                      
+                <div className="typewriter-container-headline" style={{ color: 'black', alignItems: 'center'}}>
+                    <p style={{alignItems: 'center', textAlign: 'center', fontSize: '25px' }}>-| Open to <span></span>
+                    <TypewriterText text="Work" speed={600} showCaret={true} loop={false}/>
                       <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
                     |-
                     </p>
                 </div> 
                  
-              
-              </div>
-              <div className="image-content">
-                <img src={aboutImage} loading="lazy" alt="About" />
-              </div>
-              
+              </motion.div> 
+
+              <motion.div className="image-content"
+                      ref={ref}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+                      transition={{ duration: 2 }}
+              >
+                
+                  <img src={aboutImage} loading="lazy" alt="About" />
+               
+              </motion.div>
+
             </section>
             
           <section id="about" className="section section-about-skills" ref={(el) => { sectionsRef.current[2] = el as HTMLDivElement; }}>
-            <div className="image-content">
+              <motion.div className="image-content"
+                      ref={ref}
+                      initial={{ opacity: 0, x: -150 }}
+                      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -150 }}
+                      transition={{ duration: 2 }}
+              >
+            
               <img src={gifDance} loading="lazy" alt="GIF 1"/>
-            </div> 
+             
+              </motion.div>
             <div className="text-content" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}>
               <h2>
                   <div className="typewriter-container-headline">

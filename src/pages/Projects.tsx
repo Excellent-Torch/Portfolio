@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import '../css/App.css';
 
 import gifRodGameplay from '../assets/rodgameplay.gif';
@@ -6,11 +10,24 @@ import gifFNST from '../assets/fnst.gif';
 import TypewriterText from '../TypewriterText';
 
 const Projects: React.FC = () => {
-  return (
+    const { ref, inView } = useInView();
+    const [animate, setAnimate] = useState(false);
     
+    const handleTouchStart = () => {
+        // Trigger the animation on touch start
+        setAnimate(true);
+    };
+
+  return (
     <section className="projects">
-      <div className="text-content">
-      
+
+        <motion.div className="text-content"
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 } }
+        transition={{ duration: 1 }}
+        >
+               
         <h2 style={{ textAlign: 'center', color: 'green' }}><TypewriterText text="Projects" speed={500} showCaret={true} loop={false} /></h2>
         <h3 style={{ textAlign: 'left', fontSize: '25px' }}>
           Runes Of Demons (Under Development)
@@ -27,16 +44,33 @@ const Projects: React.FC = () => {
             <li><strong>Libs:</strong> Advance Steam Online Subsystem</li>
           </ul>
         </div>
-      </div>
-      <div className="image-content">
-        <img
+      
+      </motion.div>
+
+      <motion.div className="image-content"
+       ref={ref}
+       initial={{ opacity: 0, y: 50 }}
+       animate={{ opacity: 1, y: 0 } }
+       transition={{ duration: 1 }}
+       >
+
+       <img
           src={gifRodGameplay}
           loading="lazy"
           style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
           alt="GIF 1"
         />
-      </div>
-      <div className="text-content additional-content">
+      
+      </motion.div>
+
+      <motion.div className="text-content additional-content"
+         ref={ref}
+         initial={{ opacity: 0, y: 50 }}
+         animate={inView || animate ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+         transition={{ duration: 1 }}
+         onTouchStart={handleTouchStart}
+        >
+      
         <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
           Real-Time Fast Neural Style Transfer in a 3D Environment
         </h3>
@@ -50,15 +84,24 @@ const Projects: React.FC = () => {
             <li><strong>Notebooks:</strong> Google Colab, Jupyter Notebook</li>
           </ul>
         </div>
-      </div>
-      <div className="image-content">
+      
+      </motion.div>
+
+      <motion.div className="image-content"
+       ref={ref}
+       initial={{ opacity: 0, y: 50 }}
+       animate={{ opacity: 1, y: 0 } }
+       transition={{ duration: 1 }}
+       >
+
         <img
           src={gifFNST}
           loading="lazy"
           style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
           alt="GIF 2"
         />
-      </div>
+      
+      </motion.div>
     </section>
  
   );
