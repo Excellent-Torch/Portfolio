@@ -4,7 +4,7 @@
 // 3D Stuff End
 
 import React, { useEffect, useRef, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { HashRouter, Routes, Route} from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -62,7 +62,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <Router>
+    <HashRouter>
       <Navbar />
       <Routes>
         <Route 
@@ -88,7 +88,7 @@ const App: React.FC = () => {
               </h2>
               </div> 
             </section>
-            
+
             <section id="about" className="section section-about" ref={(el) => { sectionsRef.current[1] = el as HTMLDivElement; }}>
               <motion.div className="text-content"
                       ref={ref}
@@ -174,7 +174,7 @@ const App: React.FC = () => {
 
         <Route path="/Projects" element={<Projects />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 

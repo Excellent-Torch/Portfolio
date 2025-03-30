@@ -17,6 +17,7 @@ const Navbar: React.FC = () => {
         {
         /* <p className="navbar-subline">Game/AI Developer</p> 
             <li><Link to="/#Projects" className="navbar-button">Projects</Link></li>
+            <li><a href="/about" className="navbar-button">About</a></li>
         */
         }
       </div>
@@ -24,9 +25,9 @@ const Navbar: React.FC = () => {
         <img src={menuIcon} alt="Menu Icon" />
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="/#home" className="navbar-button">Home</a></li>
-        <li><a href="/#about" className="navbar-button">About</a></li>
-        <li><a href="/Projects" className="navbar-button">Projects</a></li>
+        <li><a href="/home" className="navbar-button">Home</a></li>
+        
+        <li><a href="#/Projects" className="navbar-button">Projects</a></li>
         <li><a href="#contact" className="navbar-button">Contact</a></li>
       </ul>
     </nav>
