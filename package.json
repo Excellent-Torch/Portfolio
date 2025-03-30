@@ -11,13 +11,14 @@
   },
   "dependencies": {
     "@react-three/cannon": "^6.6.0",
-    "@react-three/drei": "^10.0.4",
+    "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.0",
     "@types/node": "^22.13.10",
     "@types/three": "^0.174.0",
     "gltfjsx": "^6.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.1",
     "three": "^0.174.0"
   },
   "devDependencies": {

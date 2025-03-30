@@ -58,7 +58,7 @@ p {
 }
 
 .section-home {
-  padding-block: 14%;
+
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -66,7 +66,18 @@ p {
   text-align: center;
   object-fit: cover;
   background-color: rgba(255, 255, 255, 0.25); /* Gray with transparency */
+
+  
+
   z-index: -1;
+}
+
+.section-home .text-content {
+  width: 100%;
+  text-align: center;
+  padding-top: 18%;
+  padding-bottom: 18%;
+  z-index: 1; /* Ensure text content is above the image */
 }
 
 .section-about {
@@ -150,36 +161,37 @@ p {
   margin-left: 15px;
 }
 
-.section-projects {
+.projects {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #000000a2;
-  clip-path: polygon(0 0, 100% 0, calc(100% - var(--p)) 100%, 0 100%);
+  padding-top: 5rem;
+
 }
 
-.section-projects .text-content {
+.projects .text-content {
   width: 50%;
-  z-index: 1; /* Ensure text content is above the image */
+  justify-content: center;
+  text-align: center;
 }
-.section-projects h2 {
+.projects h2 {
   font-size: 32px;
   color: #00cf18;
   text-align: center;
 }
 
-.section-projects .image-content {
+.projects .image-content {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.section-projects .text-content .additional-content {
+.projects .text-content .additional-content {
   justify-content: center;
   z-index: 1; /* Ensure text content is above the image */
 }
 
-.section-projects img {
+.projects img {
   max-width: 100%;
   width: 100%;
   height: 100%;
