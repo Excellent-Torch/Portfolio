@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
          transition={{ duration: 1 }}
           >
 
-            <h2 style={{ textAlign: 'center', color: 'green' }}><TypewriterText text="Projects" speed={400} showCaret={true} loop={false} /></h2>        
+            <h2 style={{ textAlign: 'center', color: 'lightgreen', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Projects" speed={400} showCaret={true} loop={false} /></h2>        
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
               Real-Time Fast Neural Style Transfer in a 3D Environment
             </h3>

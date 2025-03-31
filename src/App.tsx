@@ -14,6 +14,7 @@ import TypewriterText from './TypewriterText';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 
+
 import aboutImage from './assets/aboutImage.jpg'; 
 import gifDoom from './assets/doom.gif';
 import gifUnreal from './assets/unreal.gif';
@@ -21,6 +22,7 @@ import gifDeveloper from './assets/developer.gif';
 import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
 import gifDance from './assets/dancing.gif';
+
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -66,14 +68,19 @@ const App: React.FC = () => {
         <Route 
           path="/" 
           element={ 
+            
           <div className="content">
-          <video className="video-canvas" loop autoPlay muted>
+
+            <video className={`video-canvas ${inView ? 'fixed' : ''}`} loop autoPlay muted>
               <source src={background} type="video/mp4" />
             </video>
             <section id="home" className="section section-home" ref={(el) => { sectionsRef.current[0] = el as HTMLDivElement; }}>
-              <div className="text-content">       
+            
+              <div className="text-content"> 
+            
               <h1>
                 <div className="typewriter-container-headline">
+                 
                   <TypewriterText text="Excellent Torch" speed={150} showCaret={false} loop={false} />
                 </div>
               </h1>
@@ -84,8 +91,12 @@ const App: React.FC = () => {
                 </div>
                   <TypewriterText text="Developer" speed={100} showCaret={false} loop={false}/>
               </h2>
-              </div> 
+              </div>
+             
             </section>
+
+            
+            
 
             <section id="about" className="section section-about" ref={(el) => { sectionsRef.current[1] = el as HTMLDivElement; }}>
               <motion.div className="text-content"
@@ -108,7 +119,7 @@ const App: React.FC = () => {
 
                   </motion.div>
                 <p>
-                  Specialized in <strong>Game Development and AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
+                  Specialized in <strong>Game Development and AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px', backgroundColor: 'black' }} />, I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
                   With hands-on experience designing <strong>Multiplayer</strong> games using <strong>Unreal Engine 5</strong> <img src={gifUnreal} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I enjoy pushing the boundaries of interactive and AI-powered experiences.
                 </p>
                 <p>
@@ -118,8 +129,8 @@ const App: React.FC = () => {
                   
                 <div className="typewriter-container-headline" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'black' }}>
                   <p style={{ textAlign: 'center', fontSize: '25px' }}>-| Open to <span></span>
-                  <TypewriterText text="Work" speed={600} showCaret={true} loop={false}/>
-                    <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
+                  <TypewriterText text="Work!" speed={600} showCaret={false} loop={false}/>
+                    <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '4px' }} />
                   |-
                   </p>
                 </div> 
@@ -152,13 +163,15 @@ const App: React.FC = () => {
                   <div className="typewriter-container-headline" style={{ paddingLeft: '500px', color: 'orange' }}>
                     <TypewriterText text="Education" speed={400} showCaret={true} loop={false}/>
                   </div> 
-              </h2>
+              </h2> 
               <div style={{textAlign: 'left', fontSize: '20px' }}>
-                  <ul>
-                    <li><strong>2023-2025 : </strong>MSc In Artificial Intelligence, Dublin Business School, Ireland</li>
-                    <li><strong>2021-2022 : </strong>BSc (Hons) Cyber Security Management, Southampton, UK </li>          
+                  <ul style={{ listStyleType: 'square', lineHeight: '150%'}}>
+                    <li><strong>2023 - 2025 <br /> </strong>MSc In Artificial Intelligence,<br /> 
+                    Dublin Business School,<br />
+                     Ireland</li>
+                    <li><strong>2021 - 2022 <br /></strong>BSc (Hons) Cyber Security Management,<br /> Southampton,<br /> UK </li>          
                   </ul>
-              </div>
+              </div> 
             
           </motion.div>
           </section>
@@ -176,7 +189,7 @@ const App: React.FC = () => {
               </motion.div>
             <div className="text-content" ref={(el) => { sectionsRef.current[3] = el as HTMLDivElement; }}>
               <h2>
-                  <div className="typewriter-container-headline">
+                  <div className="typewriter-container-headline" style={{color: 'black' }}>
                     <TypewriterText text="Relevant Skills" speed={100} showCaret={false} loop={true}/>
                   </div> 
               </h2>
