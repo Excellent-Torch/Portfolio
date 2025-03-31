@@ -1,7 +1,4 @@
-//import { Canvas } from "@react-three/fiber";
-//import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
-//import { LogoModel } from "./LogoModel";
-// 3D Stuff End
+
 
 import React, { useEffect, useRef, useState } from 'react';
 import { HashRouter, Routes, Route} from 'react-router-dom';
@@ -141,6 +138,30 @@ const App: React.FC = () => {
               </motion.div>
 
             </section>
+
+          <section id="education" className="section section-education" ref={(el) => { sectionsRef.current[4] = el as HTMLDivElement; }}>
+          <motion.div className="text-content"
+                      ref={ref}
+                      initial={{ opacity: 0, y: -80 }}
+                      animate={inView || animate ? { opacity: 1, y: 0 } : { opacity: 0, y: -80 }}
+                      transition={{ duration: 0.5 }}
+                      onTouchStart={handleTouchStart}
+              >
+
+              <h2>
+                  <div className="typewriter-container-headline" style={{ paddingLeft: '500px', color: 'orange' }}>
+                    <TypewriterText text="Education" speed={400} showCaret={true} loop={false}/>
+                  </div> 
+              </h2>
+              <div style={{textAlign: 'left', fontSize: '20px' }}>
+                  <ul>
+                    <li><strong>2023-2025 : </strong>MSc In Artificial Intelligence, Dublin Business School, Ireland</li>
+                    <li><strong>2021-2022 : </strong>BSc (Hons) Cyber Security Management, Southampton, UK </li>          
+                  </ul>
+              </div>
+            
+          </motion.div>
+          </section>
             
           <section id="about" className="section section-about-skills" ref={(el) => { sectionsRef.current[2] = el as HTMLDivElement; }}>
               <motion.div className="image-content"
@@ -170,9 +191,14 @@ const App: React.FC = () => {
               </div>
             </div>
           </section>
+         
+
           </div>
+          
+
           }
         />
+        
 
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Experience" element={<Experience />} />

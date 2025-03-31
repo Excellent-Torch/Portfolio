@@ -18,15 +18,6 @@ p {
   margin-bottom: 1rem;
 }
 
-.three-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Ensure the canvas is behind the content */
-  pointer-events: auto; /* Allow interactions to pass through */
-}
 
 .video-canvas {
   position: absolute;
@@ -160,6 +151,28 @@ p {
   margin-left: 15px;
 }
 
+.section-education {
+  display: flex;
+ 
+  flex-direction: row;
+  align-items: center;
+  background: #000000a7;
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--p)) 100%, 0 100%);
+}
+
+.section-education .h2 {
+  font-size: 32px;
+  color: #00cf18;
+  text-align: center;
+}
+
+.section-education .text-content {
+
+  width: 50%;
+  padding-left: 5%;
+  z-index: 1; /* Ensure text content is above the image */
+}
+
 .projects {
   display: flex;
   flex-direction: column;
@@ -201,18 +214,30 @@ p {
 }
 
 .experience {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 2fr; /* Add this */
+  align-items: flex-start;
   padding-top: 5rem;
+  padding-left: 5rem;
 
-  
 }
 
-.experience .text-content {
+.experience .three-canvas {
+ 
   width: 50%;
-  justify-content: center;
-  text-align: center;
+  height: 50%;
+  z-index: 1; /* Ensure the canvas is behind the content */
+  pointer-events: all; /* Allow interactions to pass through */
+}
+
+
+.experience .text-content {
+  
+ 
+
+  
+  justify-content: left;
+  text-align: left;
 }
 .experience h2 {
   font-size: 32px;

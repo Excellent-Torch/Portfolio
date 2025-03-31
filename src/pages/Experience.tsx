@@ -1,4 +1,12 @@
+
+
 import React from 'react';
+
+import { Canvas } from "@react-three/fiber";
+import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
+//import { LogoModel } from "./LogoModel";
+import { SleeplessModel } from "../Sleepless";
+// 3D Stuff End
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -48,8 +56,21 @@ const Experience: React.FC = () => {
                 <li>Staying up to date with the latest Unreal Engine advancements and best practices.</li>
               </ul>
             </div>
-        
+
+            
         </motion.div>
+
+        <Canvas className="three-canvas" gl={{ alpha: true }} camera={{ position: [1, 1, 1], fov: 90 }}>
+
+            <OrbitControls  />
+            <directionalLight position={[5, 5, 5]} intensity={2} color={"white"} />
+            <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
+              <SleeplessModel />
+            </Float>
+            <ContactShadows rotation-x={Math.PI / 2} position={[0, -1, 0]} opacity={0.5} blur={2} scale={50} far={20} />  
+
+            </Canvas>
+        
 
         <motion.div className="text-content"
          ref={ref}
