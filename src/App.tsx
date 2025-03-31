@@ -118,12 +118,12 @@ const App: React.FC = () => {
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   
-                <div className="typewriter-container-headline" style={{ color: 'black', alignItems: 'center'}}>
-                    <p style={{alignItems: 'center', textAlign: 'center', fontSize: '25px' }}>-| Open to <span></span>
-                    <TypewriterText text="Work" speed={600} showCaret={true} loop={false}/>
-                      <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
-                    |-
-                    </p>
+                <div className="typewriter-container-headline" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'black' }}>
+                  <p style={{ textAlign: 'center', fontSize: '25px' }}>-| Open to <span></span>
+                  <TypewriterText text="Work" speed={600} showCaret={true} loop={false}/>
+                    <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '1px' }} />
+                  |-
+                  </p>
                 </div> 
                  
               </motion.div> 
