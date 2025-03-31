@@ -249,19 +249,40 @@ p {
 
 /* MOBILE VIEW STUFF */
 @media (max-width: 768px) {
-  .content{
-    flex-direction: column;
-    align-items: center;
+
+  #root{
+    overflow-x: hidden;
   }
 
+  .content{
+    width: 100%;
+ 
+  }
   .section{
     flex-direction: column;
     align-items: center;
+    width: 100%;
+
+  }
+
+  .video-canvas{
+    width: 100%;
+   
+  }
+
+  .section-home{
+    width: 100%;
+    padding-top: 40%;
+    padding-bottom: 50%;
+  }
+  .section-about {
+    width: 100%;
+   
   }
 
   .section-about .text-content {
-    width: 100%; /* Full width on mobile view */
-    padding-left: 0;
+    width: 90%; /* Full width on mobile view */
+    
   }
   .section-about .image-content {
     display: none; /* Hide the image on mobile view */
@@ -272,23 +293,24 @@ p {
   }
 
   .section-about-skills .text-content {
-    width: 100%; /* Full width on mobile view */
-    padding-left: 0;
+    width: 80%; /* Full width on mobile view */
+   
   }
   .section-about-skills .image-content {
     display: none; /* Hide the image on mobile view */
   }
 
+  
   .section-projects .text-content {
-    width: 80%; /* Full width on mobile view */
+    width: 100%;
+    width: max-content;
     justify-content: center;
   }
   .section-projects .image-content {
     flex-direction: column;
-    width: 90%;
+    width: max-content;
     justify-content: center;
-    
-
+  
   }
   
 

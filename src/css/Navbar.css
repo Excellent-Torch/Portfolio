@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 5;
+    z-index: 2;
   }
   
   .navbar-logo a {
@@ -75,28 +75,38 @@
     .navbar {
       flex-direction: column;
       align-items: center; /* Center the navbar */
+      
+      background-color: rgba(0, 0, 0, 0.501);
+    }
+
+    .navbar-logo a {
+      display: none;
     }
   
     .navbar-toggle {
       display: block;
       cursor: pointer;
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-      align-self: center; /* Center the icon */
+      font-size: 1rem;
+      
+      align-self: right; /* Center the icon */
+      
     }
   
     .navbar-toggle img {
-      align-self: center; /* Center the icon */
-      width: 30px; /* Adjust the size as needed */
-      height: 30px; /* Adjust the size as needed */
+      align-self: right; /* Center the icon */
+      
+      width: 25px; /* Adjust the size as needed */
+      height: 25px; /* Adjust the size as needed */
     }
   
     .navbar-links {
-      flex-direction: column;
-      width: 100%;
+      flex-direction: row;
+      
       display: none;
       align-items: center; /* Center the buttons */
       justify-content: center;
+    
+      
     }
   
     .navbar-links.open {
@@ -105,15 +115,17 @@
     }
   
     .navbar-links li {
-      width: 100%;
+      
       text-align: center;
       justify-content: center;
+      
     }
   
     .navbar-button {
-      width: 100%; /* Adjust width to center the buttons */
+      width: 80%; /* Adjust width to center the buttons */
       padding: 0.35rem 0.5rem; /* Add padding to the buttons */
       margin-right: 2rem;
+      color: rgb(255, 255, 255);
     }
   }
   
