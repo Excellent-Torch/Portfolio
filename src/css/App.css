@@ -58,17 +58,14 @@ p {
 }
 
 .section-home {
-
+  display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
   object-fit: cover;
-  background-color: rgba(255, 255, 255, 0.25); /* Gray with transparency */
-
-  
-
+  background-color: rgba(0, 0, 0, 0.25); /* Gray with transparency */
   z-index: -1;
 }
 
@@ -82,6 +79,7 @@ p {
 
 .section-about {
   display: flex;
+ 
   flex-direction: row;
   align-items: left;
   background: #ffffff;
@@ -147,6 +145,7 @@ p {
   color: #000;
   text-align: left;
   margin-left: 15px;
+  text-shadow: #0000003f 0.1em 0.1em 0.2em;
 }
 
 .section-about h2 {
@@ -201,6 +200,26 @@ p {
   border: none;
 }
 
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+
+  
+}
+
+.experience .text-content {
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+}
+.experience h2 {
+  font-size: 32px;
+  color: #00cf18;
+  text-align: center;
+}
+
 .section-contact {
   background-color: rgba(0, 0, 255, 0.5); /* Blue with transparency */
 }
@@ -214,12 +233,14 @@ p {
   display: inline-flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.85);
+  text-shadow: #000000aa 0.1em 0.1em 0.2em;
 }
 
 .typewriter-container-subline {
   color: #3dcbfee2;
   display: inline-flex;
   align-items: center;
+  text-shadow: #000000aa 0.1em 0.1em 0.2em;
 }
 
 .caret {

@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
+      <div className='navbar glass'>
       <div className="navbar-logo">
         <a href="/">|-_-|</a>
       </div>
@@ -22,10 +23,12 @@ const Navbar: React.FC = () => {
         <img src={menuIcon} alt="Menu Icon" />
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-        <li><a href="/" className="navbar-button" onClick={closeMenu}>Home</a></li>
+        <li><a href="/" className="navbar-button" onClick={closeMenu}>About</a></li>
+        <li><a href="#/Experience" className="navbar-button" onClick={closeMenu}>Experience</a></li>
         <li><a href="#/Projects" className="navbar-button" onClick={closeMenu}>Projects</a></li>
-        <li><a href="#contact" className="navbar-button" onClick={closeMenu}>Contact</a></li>
+        <li><a href="#/contact" className="navbar-button" onClick={closeMenu}>Contact</a></li>
       </ul>
+      </div>
     </nav>
   );
 };

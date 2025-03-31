@@ -15,6 +15,7 @@ import './css/App.css';
 import background from "./assets/dandan.mp4"; 
 import TypewriterText from './TypewriterText';
 import Projects from './pages/Projects';
+import Experience from './pages/Experience';
 
 import aboutImage from './assets/aboutImage.jpg'; 
 import gifDoom from './assets/doom.gif';
@@ -162,6 +163,7 @@ const App: React.FC = () => {
                   <ul>
                     <li>C++ (ONNX Runtime, OpenCV, Unreal Engine)</li>
                     <li>Python (PyTorch, NumPy, Tensorflow, OpenCV, Flask)</li>
+                    <li>HTML/CSS/TypeScript (React, React Three Fiber)</li>
                     <li>C# (UI, Standalone Apps)</li>
                     <li>CCNA/MCSA (Routing, Switching, Security)</li>            
                   </ul>
@@ -173,6 +175,7 @@ const App: React.FC = () => {
         />
 
         <Route path="/Projects" element={<Projects />} />
+        <Route path="/Experience" element={<Experience />} />
       </Routes>
     </HashRouter>
   );
