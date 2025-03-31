@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import '../css/App.css';
 
-import gifRodGameplay from '../assets/rodgameplay.gif';
-import gifFNST from '../assets/fnst.gif';
+//import gifRodGameplay from '../assets/rodgameplay.gif';
+//import gifFNST from '../assets/fnst.gif';
 import TypewriterText from '../TypewriterText';
 
 const Experience: React.FC = () => {
-    const { ref, inView } = useInView();
-    const [animate, setAnimate] = useState(false);
+    const { ref} = useInView();
+    //const [animate, setAnimate] = useState(false);
     
-    const handleTouchStart = () => {
-        // Trigger the animation on touch start
-        setAnimate(true);
-    };
+    //const handleTouchStart = () => {
+    //    // Trigger the animation on touch start
+    //    setAnimate(true);
+    //};
 
   return (
     <section className="experience">
