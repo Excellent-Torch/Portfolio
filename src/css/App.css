@@ -271,9 +271,11 @@ p {
   }
 
   .section-home{
-    width: 100%;
-    padding-top: 40%;
-    padding-bottom: 50%;
+    
+    max-width: 100%;
+    padding-top: 30%;
+    padding-bottom: 30%;
+   
   }
   .section-about {
     width: 100%;
