@@ -125,13 +125,14 @@ const Projects: React.FC = () => {
           This project was focused on developing an autonomous self-driving car system using deep learning and computer vision, deployed on the NVIDIA Jetson Nano for real-time processing. The system is designed to navigate independently by recognizing lanes, detecting obstacles, and making driving decisions.
           </p>
           <p style={{ textAlign: 'left', fontSize: '20px' }}>
-          A Convolutional Neural Network (CNN) is employed for end-to-end learning, where the model predicts steering angles based on camera input. The project aims to showcase the potential of AI in autonomous driving by integrating lane detection, object recognition, and collision avoidance.
+          A Convolutional Neural Network (CNN) is employed for end-to-end learning, where the model predicts steering angles based on camera input. The project was made to showcase the potential of AI in autonomous driving by integrating lane detection, object recognition, and collision avoidance.
           </p>
           <div style={{ textAlign: 'left', fontSize: '20px' }}>
             <ul>
-              <li><strong>Engine:</strong> Unreal Engine 5.5+</li>
-              <li><strong>Languages:</strong> C++ & Blueprints</li>
-              <li><strong>Libs:</strong> Advance Steam Online Subsystem, VRM4U, FSR 3.1+</li>
+              <li><strong>Hardware:</strong> Nvidia Jetson Nano, L298N Motor Driver Module, Adafruit Servo Driver, Buck Converter (LM2596), DC-DC Step Down Converter (12V to 5V) 3A</li>
+              <li><strong>Operating System:</strong> Ubuntu 18.04</li>
+              <li><strong>Languages:</strong> Python</li>
+              <li><strong>Libs:</strong> TensorFlow, Dlib, Tkinter, GPIO, Imutils</li>
             </ul>
           </div>
       

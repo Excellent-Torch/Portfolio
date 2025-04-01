@@ -13,6 +13,7 @@ import background from "./assets/dandan.mp4";
 import TypewriterText from './TypewriterText';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
+import Contact from './pages/Contact';
 
 
 import aboutImage from './assets/aboutImage.jpg'; 
@@ -41,7 +42,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://files.catbox.moe/gr40c0.pdf';
+      const url = 'https://files.catbox.moe/u48jb3.pdf';
       const filename = 'CV.pdf';
 
       const link = document.createElement('a');
@@ -140,7 +141,7 @@ const App: React.FC = () => {
 
                   </motion.div>
                 <p>
-                  Specialized in <strong> AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px', backgroundColor: 'black' }} /> and <strong>Game Development</strong> , I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
+                  Specialized in <strong> AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> and <strong>Game Development</strong> , I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
                   With hands-on experience designing <strong>Multiplayer</strong> games using <strong>Unreal Engine 5</strong> <img src={gifUnreal} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I enjoy pushing the boundaries of interactive and AI-powered experiences.
                 </p>
                 <p>
@@ -176,7 +177,7 @@ const App: React.FC = () => {
                       null
                     )}
                     Or
-                    <a href="#/contact" className='contact-me-link'> Contact Me <TypewriterText text=" :)" speed={500} showCaret={false} loop={true}/> </a>
+                    <a href="#/contact" className='contact-me-link'> Contact Me <span className="blink-slow">:)</span> </a>
                   </p>
                 </div> 
                  
@@ -260,6 +261,7 @@ const App: React.FC = () => {
 
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Experience" element={<Experience />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
     </HashRouter>
   );

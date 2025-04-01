@@ -242,19 +242,29 @@ p {
 
 
 .experience .text-content {
-  
- 
-
-  
   justify-content: left;
   text-align: left;
 }
+
 .experience h2 {
   font-size: 32px;
   color: #00cf18;
   text-align: center;
 }
 
+.contact
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.contact .text-content {
+
+  width: 50%;
+  padding-left: 5%;
+}
 .section-contact {
   background-color: rgba(0, 0, 255, 0.5); /* Blue with transparency */
 }
@@ -439,6 +449,27 @@ p {
   
 }
 
+/* Blink Effect */
+
+.blink-slow {
+  animation: blink 2s infinite;
+}
+
+.blink-fast {
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* MOBILE VIEW STUFF */
 @media (max-width: 768px) {
