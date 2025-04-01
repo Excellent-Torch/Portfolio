@@ -367,6 +367,79 @@ p {
   }
 }
 
+/* Download Button */
+
+.download-button {
+  background-color: #ffffff;
+  color: #3abb3f;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  border-color: #3abb3f;
+  cursor: pointer;
+  font-size: 25px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
+
+  background-color: #ffffff;
+  transition: background-color 0.2s ease-in-out;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.download-button:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: #3e8e4199;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.download-button.loading {
+  background-color: #ccc;
+  color: #666;
+  cursor: wait;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-top-color: #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contact Me Link */
+
+.contact-me-link
+{
+  text-decoration: none;
+  font-size: 25px;
+  transition: font-size 350ms ease-in-out;
+}
+
+.contact-me-link:hover {
+  text-decoration: none;
+  font-size: 30px;
+  
+}
+
+
 /* MOBILE VIEW STUFF */
 @media (max-width: 768px) {
 

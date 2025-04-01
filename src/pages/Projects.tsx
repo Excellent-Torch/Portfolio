@@ -11,9 +11,11 @@ import '../css/App.css';
 import gifRodGameplay from '../assets/rodgameplay.gif';
 import gifFNST from '../assets/fnst.gif';
 import TypewriterText from '../TypewriterText';
+import gifSelfCar from '../assets/selfcar.gif';
 
 const Projects: React.FC = () => {
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({ rootMargin: '1000px' });
+
     const [animate, setAnimate] = useState(false);
     
     const handleTouchStart = () => {
@@ -101,6 +103,50 @@ const Projects: React.FC = () => {
 
         <img
             src={gifRodGameplay}
+            loading="lazy"
+            style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
+            alt="GIF 1"
+          />
+        
+        </motion.div>
+
+        <motion.div className="text-content"
+        ref={ref}
+        initial={{ opacity: 0, x: -50 }}
+        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+        transition={{ duration: 1 }}
+        onTouchStart={handleTouchStart}
+        >
+               
+          <h3 style={{ textAlign: 'left', fontSize: '25px' }}>
+          CNN Based Autonomous Self Driving Car Prototype Using NVIDIA Jetson Nano
+          </h3>
+          <p style={{ textAlign: 'left', fontSize: '20px' }}>
+          This project was focused on developing an autonomous self-driving car system using deep learning and computer vision, deployed on the NVIDIA Jetson Nano for real-time processing. The system is designed to navigate independently by recognizing lanes, detecting obstacles, and making driving decisions.
+          </p>
+          <p style={{ textAlign: 'left', fontSize: '20px' }}>
+          A Convolutional Neural Network (CNN) is employed for end-to-end learning, where the model predicts steering angles based on camera input. The project aims to showcase the potential of AI in autonomous driving by integrating lane detection, object recognition, and collision avoidance.
+          </p>
+          <div style={{ textAlign: 'left', fontSize: '20px' }}>
+            <ul>
+              <li><strong>Engine:</strong> Unreal Engine 5.5+</li>
+              <li><strong>Languages:</strong> C++ & Blueprints</li>
+              <li><strong>Libs:</strong> Advance Steam Online Subsystem, VRM4U, FSR 3.1+</li>
+            </ul>
+          </div>
+      
+        </motion.div>
+
+        <motion.div className="image-content"
+        ref={ref}
+        initial={{ opacity: 0, x: -50 }}
+        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+        transition={{ duration: 1 }}
+        onTouchStart={handleTouchStart}
+        >
+
+        <img
+            src={gifSelfCar}
             loading="lazy"
             style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
             alt="GIF 1"
