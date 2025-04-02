@@ -42,7 +42,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://files.catbox.moe/u48jb3.pdf';
+      const url = 'https://files.catbox.moe/eks35q.pdf';
       const filename = 'CV.pdf';
 
       const link = document.createElement('a');
