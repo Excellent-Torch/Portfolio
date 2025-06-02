@@ -42,7 +42,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://files.catbox.moe/lj7cv7.pdf';
+      const url = 'https://files.catbox.moe/9od9ab.pdf';
       const filename = 'Ishan_Maduranga_CV.pdf';
 
       const link = document.createElement('a');
