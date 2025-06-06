@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './css/Navbar.css';
 import menuIcon from './assets/dropdown-menu.png'; // Adjust the path as needed
 import logoIcon from './assets/torch.gif'
 //import { Link } from 'react-router-dom';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
+  const isRunesPage = /runesofdemons/i.test(location.pathname + location.hash);
+
+  if (isRunesPage) return null;
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,6 +35,7 @@ const Navbar: React.FC = () => {
         <li><a href="#/Experience" className="navbar-button" onClick={closeMenu}>Experience</a></li>
         <li><a href="#/Projects" className="navbar-button" onClick={closeMenu}>Projects</a></li>
         <li><a href="#/contact" className="navbar-button" onClick={closeMenu}>Contact</a></li>
+         <li><a href="#/RunesOfDemons" className="navbar-button" onClick={closeMenu}>Runes of Demons</a></li>
       </ul>
       </div>
     </nav>

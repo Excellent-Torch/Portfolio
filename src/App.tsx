@@ -14,6 +14,7 @@ import TypewriterText from './TypewriterText';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
+import RunesOfDemons from './pages/RunesOfDemons';
 
 
 import aboutImage from './assets/aboutImage.jpg'; 
@@ -251,17 +252,14 @@ const App: React.FC = () => {
             </div>
           </section>
          
-
           </div>
-          
-
           }
         />
         
-
         <Route path="/Projects" element={<Projects />} />
         <Route path="/Experience" element={<Experience />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/RunesOfDemons" element={<RunesOfDemons />} />
       </Routes>
     </HashRouter>
   );
