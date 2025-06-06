@@ -65,8 +65,8 @@ const RunesOfDemons: React.FC = () => {
             justifyContent: 'center',
           }}
         >
-          <img src={unrealIcon} alt="Unreal Engine" style={{ width: 58, height: 70 }} />
-          <img src={steamIcon} alt="Steam" style={{ width: 58, height: 58 }} />
+          <img src={unrealIcon} alt="Unreal Engine" style={{ width: 58, height: 70, textShadow: '0 2px 8px #000' }} />
+          <img src={steamIcon} alt="Steam" style={{ width: 58, height: 58, textShadow: '0 2px 8px #000' }} />
         
         </div>
       </div>
