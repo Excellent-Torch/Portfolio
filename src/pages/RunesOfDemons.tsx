@@ -84,7 +84,7 @@ const RunesOfDemons: React.FC = () => {
             textShadow: '0 2px 4px #000',
             }}
         >
-            <p>An Upcomong anime-style Multiplayer Third Person Shooter game set in the brutal demon realm of Varkath. </p>
+            <p>An Upcomong anime-style Multiplayer Third Person Shooter game set in the brutal demon realm of Varkath. Coming soon to Steam to Wishlist!</p>
         </div>   
       
       </div>
