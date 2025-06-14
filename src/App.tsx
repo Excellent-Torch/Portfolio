@@ -15,6 +15,7 @@ import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import RunesOfDemons from './pages/RunesOfDemons';
+import OnnxInference from './pages/OnnxInference';
 
 
 import aboutImage from './assets/aboutImage.jpg'; 
@@ -37,7 +38,7 @@ const App: React.FC = () => {
   };
 
   
-    const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
   const handleDownload = () => {
       setIsLoading(true);
@@ -260,6 +261,7 @@ const App: React.FC = () => {
         <Route path="/Experience" element={<Experience />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/RunesOfDemons" element={<RunesOfDemons />} />
+        <Route path="/OnnxInference" element={<OnnxInference />} />
       </Routes>
     </HashRouter>
   );

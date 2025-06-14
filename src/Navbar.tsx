@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
-  const isRunesPage = /runesofdemons/i.test(location.pathname + location.hash);
+  const isRunesPage = /runesofdemons/i.test(location.pathname + location.hash) || /onnxinference/i.test(location.pathname + location.hash);
 
   if (isRunesPage) return null;
 
@@ -35,7 +35,8 @@ const Navbar: React.FC = () => {
         <li><a href="#/Experience" className="navbar-button" onClick={closeMenu}>Experience</a></li>
         <li><a href="#/Projects" className="navbar-button" onClick={closeMenu}>Projects</a></li>
         <li><a href="#/contact" className="navbar-button" onClick={closeMenu}>Contact</a></li>
-         <li><a href="#/RunesOfDemons" className="navbar-button" onClick={closeMenu}>Runes of Demons</a></li>
+        <li><a href="#/RunesOfDemons" className="navbar-button" onClick={closeMenu}>Runes of Demons</a></li>
+        <li><a href="#/OnnxInference" className="navbar-button" onClick={closeMenu}>ONNX React Inference</a></li>
       </ul>
       </div>
     </nav>
