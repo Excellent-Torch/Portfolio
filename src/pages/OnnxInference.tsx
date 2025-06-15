@@ -14,6 +14,7 @@ const OnnxInference: React.FC = () => {
   const [inputText, setInputText] = useState('');
   const [srcLang, setSrcLang] = useState('en');
   const [tgtLang, setTgtLang] = useState('fr');
+  const [modelLoaded, setModelLoaded] = useState(false);
 
   useEffect(() => {
     const previousTitle = document.title;
@@ -35,21 +36,18 @@ const OnnxInference: React.FC = () => {
     setTgtLang(event.target.value);
   };
 
-  useEffect(() => {
-    const loadModel = async () => {
-      try {
-        setIsLoading(true);
-        const instance = await pipeline(task, model);
-        console.log('Model loaded successfully:', instance);
-        pipelineInstance.current = instance;
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error loading model:', error);
-        setIsLoading(false);
-      }
-    };
-    loadModel();
-  }, []);
+  const handleLoadModel = async () => {
+    try {
+      setIsLoading(true);
+      const instance = await pipeline(task, model);
+      pipelineInstance.current = instance;
+      setModelLoaded(true);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error loading model:', error);
+      setIsLoading(false);
+    }
+  };
 
   const handleGenerate = async () => {
     try {
@@ -85,12 +83,18 @@ const OnnxInference: React.FC = () => {
       <p style={{ fontSize: '1.5rem', marginBottom: '20px' }}>
         Serverless onnx model inference using the Hugging Face <a href="https://huggingface.co/docs/transformers.js/en/index">Transformers.js</a> library.
       </p>
-      <h2 style={{ fontSize: '2rem', marginBottom: '5px' }}>Multilingual Translation Test</h2>
+      <h2 style={{ fontSize: '2rem', marginBottom: '5px' }}>Multilingual Translation <a href="https://huggingface.co/Xenova/m2m100_418M">(Xenova/m2m100_418M) </a> </h2>
       
       <div style={{ marginBottom: '25px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}> 
         <p style={{ fontSize: '1.5rem' }}> 
          <input style={{ width: '300px', fontSize: '1.5rem' }} type="text" value={inputText} onChange={handleInputChange} placeholder="Enter text to translate" />
         </p> 
+      </div>
+
+      <div style={{ marginBottom: 16 }}>
+        <button onClick={handleLoadModel} disabled={isLoading || modelLoaded}>
+          {modelLoaded ? 'Model Loaded' : isLoading ? 'Loading Model...' : 'Load Model'}
+        </button>
       </div>
 
       <div style={{ marginBottom: '25px', display: 'flex', gap: '25px' }}>
