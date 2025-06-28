@@ -1,6 +1,6 @@
 
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Suspense,useEffect, useRef, useState } from 'react';
 import { HashRouter, Routes, Route} from 'react-router-dom';
 
 import { motion } from 'framer-motion';
@@ -11,11 +11,13 @@ import './css/App.css';
 
 import background from "./assets/dandan.mp4"; 
 import TypewriterText from './TypewriterText';
-import Projects from './pages/Projects';
-import Experience from './pages/Experience';
-import Contact from './pages/Contact';
-import RunesOfDemons from './pages/RunesOfDemons';
-import OnnxInference from './pages/OnnxInference';
+
+// Lazy load pages
+const Projects = React.lazy(() => import('./pages/Projects'));
+const Experience = React.lazy(() => import('./pages/Experience'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const RunesOfDemons = React.lazy(() => import('./pages/RunesOfDemons'));
+const OnnxInference = React.lazy(() => import('./pages/OnnxInference'));
 
 
 import aboutImage from './assets/aboutImage.jpg'; 
@@ -88,6 +90,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <Navbar />
+      <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route 
           path="/" 
@@ -263,6 +266,7 @@ const App: React.FC = () => {
         <Route path="/RunesOfDemons" element={<RunesOfDemons />} />
         <Route path="/OnnxInference" element={<OnnxInference />} />
       </Routes>
+      </Suspense>
     </HashRouter>
   );
 };
