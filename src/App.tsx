@@ -154,17 +154,20 @@ const App: React.FC = () => {
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   
-                <div className="typewriter-container-headline" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'black', top: '0', left: '0' , marginBottom: '20px'}}>
-                  <p style={{ textAlign: 'center', fontSize: '25px' }}>-| Open to <span></span>
-                  <TypewriterText text="Work!" speed={600} showCaret={false} loop={false}/>
-                    <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '4px' }} />
-                  |-
-                  <span> </span>
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', color: 'black', top: '0', left: '0' , marginBottom: '10px', textShadow: '0.1em 0.1em 0.2em gray' }}>
+                 <span>-| Open to&nbsp;</span>
+                  <TypewriterText text="Work! " speed={600} showCaret={false} loop={false}/>
+                  <img src={gifWork} loading="lazy" alt="GIF 1" style={{ width: '30px', height: '30px', marginLeft: '4px' }} />
+                  <p>|- </p>
+                  
                   <br></br>
-                    <button
+                    
+                </div> 
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                  <button
                         className={`download-button ${isLoading ? 'loading' : ''}`}
                         onClick={handleDownload}
-                        style={{ marginTop: '20px' }}
+                        style={{ marginTop: '5px',marginBottom: '5px'}}
                       >
                         {isLoading ? (
                           <div className="loading-spinner">
@@ -181,10 +184,10 @@ const App: React.FC = () => {
                     ) : (
                       null
                     )}
-                    Or
+                    <p><span>Or&nbsp;</span></p>
                     <a href="#/contact" className='contact-me-link'> Contact Me <span className="blink-slow">:)</span> </a>
-                  </p>
-                </div> 
+               
+                </div>
                  
               </motion.div> 
 
@@ -195,7 +198,7 @@ const App: React.FC = () => {
                       transition={{ duration: 2 }}
               >
                 
-                  <img src={aboutImage} loading="lazy" alt="About" />
+                  <img style={{ width: '100%', height: 'auto', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }} src={aboutImage} loading="lazy" alt="About" />
                
               </motion.div>
 

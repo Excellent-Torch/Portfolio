@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
             <h3 style={{ textAlign: 'center', fontSize: '25px', marginTop: '20px' }}>
             Feel free to send me a message here:
             <span> </span>
-            <a>ishanmaduranga42@gmail.com</a>
+            <a>contact@excellenttorch.com</a>
             <br></br>
             Or Any Social Media Thing Over Here &#128512;<span className="blink-fast">👇</span>
             <br></br>

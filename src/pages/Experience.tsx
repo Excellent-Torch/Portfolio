@@ -18,7 +18,9 @@ import '../css/App.css';
 import TypewriterText from '../TypewriterText';
 
 const Experience: React.FC = () => {
-    const { ref} = useInView();
+    const { ref: ref1 } = useInView();
+    const { ref: ref2 } = useInView();
+
     //const [animate, setAnimate] = useState(false);
     
     //const handleTouchStart = () => {
@@ -30,7 +32,7 @@ const Experience: React.FC = () => {
     <section className="experience">
 
         <motion.div className="text-content"
-         ref={ref}
+         ref={ref1}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
          transition={{ duration: 2 }}
@@ -69,11 +71,11 @@ const Experience: React.FC = () => {
             </Float>
             <ContactShadows rotation-x={Math.PI / 2} position={[0, -1, 0]} opacity={0.5} blur={2} scale={50} far={20} />  
 
-            </Canvas>
+        </Canvas>
         
 
         <motion.div className="text-content"
-         ref={ref}
+         ref={ref2}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
          transition={{ duration: 2 }}
