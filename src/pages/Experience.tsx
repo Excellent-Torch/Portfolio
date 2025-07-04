@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
 
             <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Experience" speed={400} showCaret={true} loop={false} /></h2>        
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              Part-Time Game Developer Intern, Sleepless Inc. 
+              Game Developer Intern, Sleepless Inc. 
               <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Dublin, Ireland. 2024 - 2025</div>
               
             </h3>
@@ -82,8 +82,8 @@ const Experience: React.FC = () => {
           >
 
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-            Self-Employed | Freelance AI & Machine Learning Specialist
-              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2019 - 2024</div>
+            Freelance AI & Machine Learning Specialist, Fiverr & Direct Contracts
+              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2019 - 2025</div>
               
             </h3>
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
@@ -94,13 +94,46 @@ const Experience: React.FC = () => {
             </p>
             <div style={{ textAlign: 'left', fontSize: '20px' }}>
               <ul>
-                <li>Worked on various freelancing projects through platforms like Fiverr and direct third-party clients.</li>
-                <li>Specialized in AI and machine learning, delivering solutions tailored to client needs.</li>
-                <li>Provided data-driven insights, model development, and automation solutions.</li>
+                <li>Delivered AI and ML solutions to clients via Fiverr and direct contracts.</li>
+                <li>Built and deployed models for deep learning, computer vision, and data analytics
+tasks.</li>
+                <li>Deep Learning, Computer Vision, Data Preprocessing and Model
+Deployment using Amazon ECS/ Azure Kubernetes</li>
+                <li>Conducted model optimization and integration for real-time applications and
+IOT/Client based devices.</li>
               </ul>
             </div>
         
         </motion.div>
+
+         <motion.div className="text-content"
+         ref={ref2}
+         initial={{ opacity: 0, y: 50 }}
+         animate={{ opacity: 1, y: 0 } }
+         transition={{ duration: 2 }}
+          >
+
+            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
+            Artificial Intelligence Engineer Intern, BCAS Campus
+              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2021 - 2022</div>
+              
+            </h3>
+            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
+              
+            </h3>
+            <p style={{ textAlign: 'left', fontSize: '20px' }}>
+
+            </p>
+            <div style={{ textAlign: 'left', fontSize: '20px' }}>
+              <ul>
+                <li>Participated in academic research initiatives, contributing to projects involving generative adversarial networks (GANs), autonomous systems, and reinforcement learning.</li>
+                <li>Collaborated on building RESTful APIs using FastAPI and Flask to serve AI functionalities to front-end clients.</li>
+                <li>Documented all development processes, including model training, evaluation, and deployment strategies, in line with academic and industry standards.</li>
+              </ul>
+            </div>
+        
+        </motion.div>
+
 
        
     </section>

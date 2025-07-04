@@ -46,7 +46,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://files.catbox.moe/9od9ab.pdf';
+      const url = 'https://ia600906.us.archive.org/29/items/ishan-madhuranga-cv/Ishan_Madhuranga_CV.pdf';
       const filename = 'Ishan_Maduranga_CV.pdf';
 
       const link = document.createElement('a');
@@ -223,7 +223,7 @@ const App: React.FC = () => {
                     <li><strong>2023 - 2025 <br /> </strong>MSc In Artificial Intelligence,<br /> 
                     Dublin Business School,<br />
                      Ireland</li>
-                    <li><strong>2021 - 2022 <br /></strong>BSc (Hons) Cyber Security Management,<br /> Solent University Southampton,<br /> UK </li>          
+                    <li><strong>2021 - 2022 <br /></strong>BSc (Hons) Cyber Security Management,<br /> Solent University Southampton,<br /> England </li>          
                   </ul>
               </div> 
             
