@@ -22,7 +22,7 @@ const OnnxInference = React.lazy(() => import('./pages/OnnxInference'));
 
 import aboutImage from './assets/aboutImage.jpg'; 
 import gifDoom from './assets/doom.gif';
-import gifUnreal from './assets/unreal.gif';
+//import gifUnreal from './assets/unreal.gif';
 import gifDeveloper from './assets/developer.gif';
 import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
@@ -46,7 +46,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://ia600908.us.archive.org/9/items/ishan-madhuranga-cv_202508/Ishan_Madhuranga_CV.pdf';
+      const url = 'https://ia801005.us.archive.org/9/items/ishan-madhuranga-cv_20250824_0841/Ishan_Madhuranga_CV.pdf';
       const filename = 'Ishan_Maduranga_CV.pdf';
 
       const link = document.createElement('a');
@@ -146,11 +146,11 @@ const App: React.FC = () => {
 
                   </motion.div>
                 <p>
-                  Specialized in <strong> AI</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> and <strong>Game Development</strong> , I am passionate about creating immersive and engaging experiences that push the boundaries of technology.
-                  With hands-on experience designing <strong>Multiplayer</strong> games using <strong>Unreal Engine 5</strong> <img src={gifUnreal} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px', backgroundColor: 'black' }} />, I enjoy pushing the boundaries of interactive and AI-powered experiences.
+                  Specialized in <strong> Artificial Intelligence</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> ,  I am passionate about developing innovative and scalable AI solutions that create real world impact. 
+                  With a master’s degree in AI and hands on experience in deep learning, computer vision, and reinforcement learning, I focus specially on building efficient models for real time applications.
                 </p>
                 <p>
-                As an AI enthusiast with a master’s degree in Artificial Intelligence., I am currently working as a <strong>Game Developer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> in a part-time internship, contributing to the remake of a classic game in collaboration with its original creator by incorporating a fresh perspective and modern technologies. Additionally, I am developing my own <strong>Third-Person Multiplayer Shooter</strong> game as a Solo Dev, featuring optimized <strong>Net Code</strong> and unique <strong>Gameplay Mechanics.</strong>
+                  I have worked as an <strong>AI Engineer Intern</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} />, contributing to research on GANs, autonomous systems, and API-based AI services, and as a <strong>Freelance AI/ML Specialist</strong>, delivering client projects involving model deployment, computer vision, and IoT integration. Most recently, I worked as an <strong>AI Gameplay Programmer</strong> Intern, where I implemented AI behavior mechanics and optimized performance for interactive environments.
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   
@@ -220,10 +220,10 @@ const App: React.FC = () => {
               </h2> 
               <div style={{textAlign: 'left', fontSize: '20px' }}>
                   <ul style={{ listStyleType: 'square', lineHeight: '150%'}}>
-                    <li><strong>2023 - 2025 <br /> </strong>MSc In Artificial Intelligence,<br /> 
+                    <li><strong>2023 - 2025 <br /> </strong>MSc (Hons) Artificial Intelligence,<br /> 
                     Dublin Business School,<br />
                      Ireland</li>
-                    <li><strong>2021 - 2022 <br /></strong>BSc (Hons) Cyber Security Management,<br /> Solent University Southampton,<br /> England </li>          
+                    <li><strong>2021 - 2022 <br /></strong>BSc (Hons) Cyber Security Management,<br /> Solent University Southampton,<br /> UK </li>          
                   </ul>
               </div> 
             

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+
+
 import { pipeline } from '@huggingface/transformers';
 import '../css/App.css';
 import languageOptions from '../js/languageOptions'; 
@@ -15,6 +17,7 @@ const OnnxInference: React.FC = () => {
   const [srcLang, setSrcLang] = useState('en');
   const [tgtLang, setTgtLang] = useState('fr');
   const [modelLoaded, setModelLoaded] = useState(false);
+
 
   useEffect(() => {
     const previousTitle = document.title;
@@ -67,6 +70,7 @@ const OnnxInference: React.FC = () => {
   };
 
   return (
+    
     <div style={{
           position: 'relative',
           zIndex: 1,
@@ -78,24 +82,42 @@ const OnnxInference: React.FC = () => {
           fontSize: '2rem',
           textShadow: '0 2px 8px #000',
           }}>
-
+      <button
+        style={{
+          position: 'absolute',
+          top: 20,
+          left: 20,
+          padding: '8px 16px',
+          fontSize: '1rem',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          zIndex: 2,
+        }}
+        onClick={() => {
+          window.location.href = '/';
+        }}
+        >
+        ← Back to Home
+      </button>
       <h1 style={{ fontSize: '3rem' }}><TypewriterText text="React + TS Onnx Model Inference" speed={100} showCaret={true} loop={false} /></h1>
       <p style={{ fontSize: '1.5rem', marginBottom: '20px' }}>
         Serverless onnx model inference using the Hugging Face <a href="https://huggingface.co/docs/transformers.js/en/index">Transformers.js</a> library.
       </p>
       <h2 style={{ fontSize: '2rem', marginBottom: '5px' }}>Multilingual Translation <a href="https://huggingface.co/Xenova/m2m100_418M">(Xenova/m2m100_418M) </a> </h2>
       
+      <div style={{ marginBottom: 16 }}>
+        <button style={{ fontSize: '1rem', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }} onClick={handleLoadModel} disabled={isLoading || modelLoaded}>
+          {modelLoaded ? 'Model Loaded' : isLoading ? 'Setting up Model...' : 'Download Model'}
+        </button>
+      </div>
+
       <div style={{ marginBottom: '25px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}> 
         <p style={{ fontSize: '1.5rem' }}> 
          <input style={{ width: '300px', fontSize: '1.5rem' }} type="text" value={inputText} onChange={handleInputChange} placeholder="Enter text to translate" />
         </p> 
       </div>
 
-      <div style={{ marginBottom: 16 }}>
-        <button onClick={handleLoadModel} disabled={isLoading || modelLoaded}>
-          {modelLoaded ? 'Model Loaded' : isLoading ? 'Loading Model...' : 'Load Model'}
-        </button>
-      </div>
+      
 
       <div style={{ marginBottom: '25px', display: 'flex', gap: '25px' }}>
           <p style={{ fontSize: '1rem' }}>From:</p>
@@ -118,8 +140,8 @@ const OnnxInference: React.FC = () => {
 
       <div>
         <button onClick={handleGenerate} disabled={isLoading}>
-        {isLoading ? 'Loading model...' : 'Generate'}
-      </button>
+          {isLoading ? 'Loading model...' : 'Generate'}
+        </button>
       
       </div>
       <div>
