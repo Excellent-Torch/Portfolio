@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
 
         <motion.div className="text-content"
          ref={ref}
-         initial={{ opacity: 0, x: -80 }}
+         initial={{ opacity: 0, x: -50 }}
          animate={{ opacity: 1, x: 0 } }
          transition={{ duration: 1 }}
           >
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
 
         <motion.div className="image-content"
         ref={ref}
-        initial={{ opacity: 0, x: -80 }}
+        initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 } }
         transition={{ duration: 1 }}
         >

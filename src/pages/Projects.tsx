@@ -67,48 +67,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
 
-        <motion.div className="text-content"
-        ref={ref}
-        initial={{ opacity: 0, x: 50 }}
-        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-        transition={{ duration: 1 }}
-        onTouchStart={handleTouchStart}
-        >
-               
-          <h3 style={{ textAlign: 'left', fontSize: '25px' }}>
-            Runes Of Demons (Under Development)
-          </h3>
-          <p style={{ textAlign: 'left', fontSize: '20px' }}>
-            Creator of the game Runes of Demons, Sri Lanka's First Ever Third Person Multiplayer
-            game made as a Solo Dev. All the core mechanics were done using C++
-            with proper lag compensation.
-          </p>
-          <div style={{ textAlign: 'left', fontSize: '20px' }}>
-            <ul>
-              <li><strong>Engine:</strong> Unreal Engine 5.5+</li>
-              <li><strong>Languages:</strong> C++ & Blueprints</li>
-              <li><strong>Libs:</strong> Advance Steam Online Subsystem, VRM4U, FSR 3.1+</li>
-            </ul>
-          </div>
-      
-        </motion.div>
-
-        <motion.div className="image-content"
-        ref={ref}
-        initial={{ opacity: 0, x: 50 }}
-        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-        transition={{ duration: 1 }}
-        onTouchStart={handleTouchStart}
-        >
-
-        <img
-            src={gifRodGameplay}
-            loading="lazy"
-            style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
-            alt="GIF 1"
-          />
-        
-        </motion.div>
+       
 
         <motion.div className="text-content"
         ref={ref}
@@ -148,6 +107,49 @@ const Projects: React.FC = () => {
 
         <img
             src={gifSelfCar}
+            loading="lazy"
+            style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
+            alt="GIF 1"
+          />
+        
+        </motion.div>
+
+         <motion.div className="text-content"
+        ref={ref}
+        initial={{ opacity: 0, x: 50 }}
+        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        transition={{ duration: 1 }}
+        onTouchStart={handleTouchStart}
+        >
+               
+          <h3 style={{ textAlign: 'left', fontSize: '25px' }}>
+            Runes Of Demons (Under Development)
+          </h3>
+          <p style={{ textAlign: 'left', fontSize: '20px' }}>
+            Creator of the game Runes of Demons, Sri Lanka's First Ever Third Person Multiplayer
+            game made as a Solo Dev. All the core mechanics were done using C++
+            with proper lag compensation.
+          </p>
+          <div style={{ textAlign: 'left', fontSize: '20px' }}>
+            <ul>
+              <li><strong>Engine:</strong> Unreal Engine 5.5+</li>
+              <li><strong>Languages:</strong> C++ & Blueprints</li>
+              <li><strong>Libs:</strong> Advance Steam Online Subsystem, VRM4U, FSR 3.1+</li>
+            </ul>
+          </div>
+      
+        </motion.div>
+
+        <motion.div className="image-content"
+        ref={ref}
+        initial={{ opacity: 0, x: 50 }}
+        animate={inView || animate ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        transition={{ duration: 1 }}
+        onTouchStart={handleTouchStart}
+        >
+
+        <img
+            src={gifRodGameplay}
             loading="lazy"
             style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
             alt="GIF 1"

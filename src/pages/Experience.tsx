@@ -35,7 +35,7 @@ const Experience: React.FC = () => {
          ref={ref1}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
-         transition={{ duration: 2 }}
+         transition={{ duration: 1 }}
           >
 
             <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Experience" speed={400} showCaret={true} loop={false} /></h2>        
@@ -74,43 +74,13 @@ const Experience: React.FC = () => {
         </Canvas>
         
 
-        <motion.div className="text-content"
-         ref={ref2}
-         initial={{ opacity: 0, y: 50 }}
-         animate={{ opacity: 1, y: 0 } }
-         transition={{ duration: 2 }}
-          >
-
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-            Freelance AI & Machine Learning Specialist, Fiverr & Direct Contracts
-              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2019 - 2025</div>
-              
-            </h3>
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              
-            </h3>
-            <p style={{ textAlign: 'left', fontSize: '20px' }}>
-
-            </p>
-            <div style={{ textAlign: 'left', fontSize: '20px' }}>
-              <ul>
-                <li>Delivered AI and ML solutions to clients via Fiverr and direct contracts.</li>
-                <li>Built and deployed models for deep learning, computer vision, and data analytics
-tasks.</li>
-                <li>Deep Learning, Computer Vision, Data Preprocessing and Model
-Deployment using Amazon ECS/ Azure Kubernetes</li>
-                <li>Conducted model optimization and integration for real-time applications and
-IOT/Client based devices.</li>
-              </ul>
-            </div>
-        
-        </motion.div>
+       
 
          <motion.div className="text-content"
          ref={ref2}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
-         transition={{ duration: 2 }}
+         transition={{ duration: 1 }}
           >
 
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
@@ -134,7 +104,37 @@ IOT/Client based devices.</li>
         
         </motion.div>
 
+        <motion.div className="text-content"
+                ref={ref2}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 } }
+                transition={{ duration: 1 }}
+                  >
 
+                    <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
+                    Freelance AI & Machine Learning Specialist, Fiverr & Direct Contracts
+                      <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2019 - 2025</div>
+                      
+                    </h3>
+                    <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
+                      
+                    </h3>
+                    <p style={{ textAlign: 'left', fontSize: '20px' }}>
+
+                    </p>
+                    <div style={{ textAlign: 'left', fontSize: '20px' }}>
+                      <ul>
+                        <li>Delivered AI and ML solutions to clients via Fiverr and direct contracts.</li>
+                        <li>Built and deployed models for deep learning, computer vision, and data analytics
+        tasks.</li>
+                        <li>Deep Learning, Computer Vision, Data Preprocessing and Model
+        Deployment using Amazon ECS/ Azure Kubernetes</li>
+                        <li>Conducted model optimization and integration for real-time applications and
+        IOT/Client based devices.</li>
+                      </ul>
+                    </div>
+                
+                </motion.div>
        
     </section>
  
