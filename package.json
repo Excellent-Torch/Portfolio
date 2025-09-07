@@ -18,6 +18,7 @@
     "@types/three": "^0.174.0",
     "framer-motion": "^12.6.2",
     "gltfjsx": "^6.5.3",
+    "lucide-react": "^0.542.0",
     "onnxruntime-react-native": "^1.22.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

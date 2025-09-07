@@ -11,6 +11,7 @@ import './css/App.css';
 
 import background from "./assets/dandan.mp4"; 
 import TypewriterText from './TypewriterText';
+import ChatWidget from "./ChatWidget";
 
 // Lazy load pages
 const Projects = React.lazy(() => import('./pages/Projects'));
@@ -258,8 +259,21 @@ const App: React.FC = () => {
               </div>
             </div>
           </section>
-         
+                 
+
+                  <div style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        zIndex: 1000,
+        pointerEvents: 'auto'
+      }}>
+        <ChatWidget />
+      </div>  
           </div>
+          
+          
           }
         />
         
@@ -268,6 +282,7 @@ const App: React.FC = () => {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/RunesOfDemons" element={<RunesOfDemons />} />
         <Route path="/OnnxInference" element={<OnnxInference />} />
+        
       </Routes>
       </Suspense>
     </HashRouter>
