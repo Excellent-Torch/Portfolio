@@ -115,7 +115,7 @@ const App: React.FC = () => {
               
               <h2>
                 <div className="typewriter-container-subline">
-                  <TypewriterText text="AI/Game" speed={600} showCaret={true} loop={true}/>
+                  <TypewriterText text="AI/ML" speed={600} showCaret={true} loop={true}/>
                 </div>
                   <TypewriterText text="Developer" speed={100} showCaret={false} loop={false}/>
               </h2>
@@ -261,19 +261,10 @@ const App: React.FC = () => {
           </section>
                  
 
-                  <div style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 1000,
-        pointerEvents: 'auto'
-      }}>
-        <ChatWidget />
-      </div>  
-          </div>
-          
-          
+                  <div className="chat-widget">
+                      <ChatWidget />
+                  </div>  
+        </div>
           }
         />
         
