@@ -47,7 +47,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://ia801005.us.archive.org/9/items/ishan-madhuranga-cv_20250824_0841/Ishan_Madhuranga_CV.pdf';
+      const url = 'https://ia600901.us.archive.org/30/items/ishan-madhuranga-cv_202509/Ishan_Madhuranga_CV.pdf';
       const filename = 'Ishan_Maduranga_CV.pdf';
 
       const link = document.createElement('a');
