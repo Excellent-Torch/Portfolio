@@ -29,6 +29,9 @@ import gifAI from './assets/artin.gif';
 import gifWork from './assets/work.gif';
 import gifDance from './assets/dancing.gif';
 
+//Components from ReactBits
+import TargetCursor from './components/TargetCursor';
+
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -98,6 +101,10 @@ const App: React.FC = () => {
           element={ 
             
           <div className="content">
+            <TargetCursor 
+              spinDuration={4}
+              hideDefaultCursor={true}
+            />
 
             <video className={`video-canvas ${inView ? 'fixed' : ''}`} loop autoPlay muted>
               <source src={background} type="video/mp4" />

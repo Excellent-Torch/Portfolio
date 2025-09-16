@@ -23,6 +23,7 @@
     "@types/three": "^0.174.0",
     "framer-motion": "^12.6.2",
     "gltfjsx": "^6.5.3",
+    "gsap": "^3.13.0",
     "langchain": "^0.3.33",
     "lucide-react": "^0.542.0",
     "onnxruntime-react-native": "^1.22.0",
