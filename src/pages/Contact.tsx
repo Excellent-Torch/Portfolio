@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 
 import '../css/App.css';
 
-import TypewriterText from '../TypewriterText';
+import TypewriterText from '../components/TypewriterText';
 import gifContact from '../assets/contact.gif';
 
 

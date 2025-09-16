@@ -10,8 +10,8 @@ import Navbar from "./Navbar";
 import './css/App.css';
 
 import background from "./assets/dandan.mp4"; 
-import TypewriterText from './TypewriterText';
-import ChatWidget from "./ChatWidget";
+import TypewriterText from './components/TypewriterText';
+import ChatWidget from "./components/ChatWidget";
 
 // Lazy load pages
 const Projects = React.lazy(() => import('./pages/Projects'));

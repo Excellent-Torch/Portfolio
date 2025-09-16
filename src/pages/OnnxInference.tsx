@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { pipeline } from '@huggingface/transformers';
 import '../css/App.css';
-import languageOptions from '../js/languageOptions'; 
-import TypewriterText from '../TypewriterText';
+import languageOptions from '../components/languageOptions'; 
+import TypewriterText from '../components/TypewriterText';
 
 const OnnxInference: React.FC = () => {
   const task = 'translation';

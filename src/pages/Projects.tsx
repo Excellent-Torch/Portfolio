@@ -10,7 +10,7 @@ import '../css/App.css';
 
 import gifRodGameplay from '../assets/rodgameplay.gif';
 import gifFNST from '../assets/fnst.gif';
-import TypewriterText from '../TypewriterText';
+import TypewriterText from '../components/TypewriterText';
 import gifSelfCar from '../assets/selfcar.gif';
 
 const Projects: React.FC = () => {

@@ -5,7 +5,7 @@ import React from 'react';
 import { Canvas } from "@react-three/fiber";
 import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
 //import { LogoModel } from "./LogoModel";
-import { SleeplessModel } from "../Sleepless";
+import { SleeplessModel } from "../components/Sleepless";
 // 3D Stuff End
 
 import { motion } from 'framer-motion';
@@ -15,7 +15,7 @@ import '../css/App.css';
 
 //import gifRodGameplay from '../assets/rodgameplay.gif';
 //import gifFNST from '../assets/fnst.gif';
-import TypewriterText from '../TypewriterText';
+import TypewriterText from '../components/TypewriterText';
 
 const Experience: React.FC = () => {
     const { ref: ref1 } = useInView();
