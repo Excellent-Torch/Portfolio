@@ -31,6 +31,7 @@ import gifDance from './assets/dancing.gif';
 
 //Components from ReactBits
 import TargetCursor from './components/TargetCursor';
+import Shuffle from './components/ShuffleText';
 
 
 const App: React.FC = () => {
@@ -106,6 +107,8 @@ const App: React.FC = () => {
               hideDefaultCursor={true}
             />
 
+            
+
             <video className={`video-canvas ${inView ? 'fixed' : ''}`} loop autoPlay muted>
               <source src={background} type="video/mp4" />
             </video>
@@ -116,7 +119,22 @@ const App: React.FC = () => {
               <h1>
                 <div className="typewriter-container-headline">
                  
-                  <TypewriterText text="Excellent Torch" speed={150} showCaret={false} loop={false} />
+                  <Shuffle
+              text="Excellent Torch"
+              shuffleDirection="right"
+              duration={0.35}
+              animationMode="evenodd"
+              shuffleTimes={1}
+              ease="power3.out"
+              stagger={0.2}
+              threshold={0.1}
+              triggerOnce={false}
+              triggerOnHover={true}
+              loop={true}
+              loopDelay={2}
+              respectReducedMotion={true}
+              
+            />
                 </div>
               </h1>
               

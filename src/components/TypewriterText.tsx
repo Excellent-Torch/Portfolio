@@ -6,6 +6,7 @@ interface TypewriterTextProps {
   speed: number;
   showCaret?: boolean;
   loop?: boolean;
+
 }
 
 const TypewriterText: React.FC<TypewriterTextProps> = ({ text, speed, showCaret = true, loop = false }) => {
@@ -28,6 +29,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({ text, speed, showCaret 
         typewriter.stop();
       };
     }
+    
   }, [text, speed, showCaret, loop]);
 
   return (

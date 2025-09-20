@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@huggingface/inference": "^4.8.0",
     "@huggingface/transformers": "^3.5.2",
     "@langchain/community": "^0.3.55",
@@ -26,6 +27,7 @@
     "gsap": "^3.13.0",
     "langchain": "^0.3.33",
     "lucide-react": "^0.542.0",
+    "motion": "^12.23.16",
     "onnxruntime-react-native": "^1.22.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
