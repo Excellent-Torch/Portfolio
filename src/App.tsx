@@ -134,7 +134,7 @@ const App: React.FC = () => {
               triggerOnce={false}
               triggerOnHover={true}
               loop={true}
-              loopDelay={2}
+              loopDelay={1.5}
               respectReducedMotion={true}
               
             />
