@@ -93,7 +93,13 @@ const App: React.FC = () => {
   }, []);
 
   return (
+    
     <HashRouter>
+      <TargetCursor 
+              targetSelector='a,button,[role="button"],input[type="button"],input[type="submit"],input[type="reset"]'
+              spinDuration={4}
+              hideDefaultCursor={true}
+            />
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
       <Routes>
@@ -102,10 +108,7 @@ const App: React.FC = () => {
           element={ 
             
           <div className="content">
-            <TargetCursor 
-              spinDuration={4}
-              hideDefaultCursor={true}
-            />
+            
 
             
 

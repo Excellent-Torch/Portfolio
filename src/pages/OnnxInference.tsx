@@ -17,6 +17,8 @@ const OnnxInference: React.FC = () => {
   const [srcLang, setSrcLang] = useState('en');
   const [tgtLang, setTgtLang] = useState('fr');
   const [modelLoaded, setModelLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null); 
+
 
 
   useEffect(() => {
@@ -39,32 +41,34 @@ const OnnxInference: React.FC = () => {
     setTgtLang(event.target.value);
   };
 
-  const handleLoadModel = async () => {
+ const handleLoadModel = async () => {
     try {
       setIsLoading(true);
+      setError(null);
       const instance = await pipeline(task, model);
       pipelineInstance.current = instance;
       setModelLoaded(true);
       setIsLoading(false);
-    } catch (error) {
-      console.error('Error loading model:', error);
+    } catch (error: any) {
       setIsLoading(false);
+      setError(error?.message || String(error));
+      console.error('Error loading model:', error);
     }
   };
 
   const handleGenerate = async () => {
     try {
+      setError(null);
       if (!pipelineInstance.current) {
-        console.error('Model not loaded yet!');
-        return;
+        throw new Error('Model not loaded yet!');
       }
       const inferenceResult = await pipelineInstance.current(inputText, {
         src_lang: srcLang,
         tgt_lang: tgtLang,
       });
-      console.log('Translation:', inferenceResult);
       setResult(inferenceResult);
-    } catch (error) {
+    } catch (error: any) {
+      setError(error?.message || String(error));
       console.error('Error during inference:', error);
     }
   };
@@ -83,15 +87,15 @@ const OnnxInference: React.FC = () => {
           textShadow: '0 2px 8px #000',
           }}>
       <button
+        className='generate-button'
         style={{
           position: 'absolute',
           top: 20,
           left: 20,
           padding: '8px 16px',
           fontSize: '1rem',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          zIndex: 2,
+          
+          zIndex: 2
         }}
         onClick={() => {
           window.location.href = '/';
@@ -106,7 +110,7 @@ const OnnxInference: React.FC = () => {
       <h2 style={{ fontSize: '2rem', marginBottom: '5px' }}>Multilingual Translation <a href="https://huggingface.co/Xenova/m2m100_418M">(Xenova/m2m100_418M) </a> </h2>
       
       <div style={{ marginBottom: 16 }}>
-        <button style={{ fontSize: '1rem', padding: '8px 16px', borderRadius: '8px', cursor: 'pointer' }} onClick={handleLoadModel} disabled={isLoading || modelLoaded}>
+        <button style={{ fontSize: '1rem', padding: '8px 16px', borderRadius: '8px', cursor: 'none' }} onClick={handleLoadModel} disabled={isLoading || modelLoaded}>
           {modelLoaded ? 'Model Loaded' : isLoading ? 'Setting up Model...' : 'Download Model'}
         </button>
       </div>
@@ -120,18 +124,18 @@ const OnnxInference: React.FC = () => {
       
 
       <div style={{ marginBottom: '25px', display: 'flex', gap: '25px' }}>
-          <p style={{ fontSize: '1rem' }}>From:</p>
-          <select value={srcLang} onChange={handleSrcLangChange}>
+          <p style={{ fontSize: '1.2rem' }}>From:</p>
+          <select style={{ fontSize: '1rem' , cursor: 'none' }} value={srcLang} onChange={handleSrcLangChange}>
         {languageOptions.map((language: { value: string; label: string }) => (
-          <option key={language.value} value={language.value}>
+          <option style={{ fontSize: '1rem' , cursor: 'none' }} key={language.value} value={language.value}>
             {language.label}
           </option>
         ))}
       </select>
-      <p style={{ fontSize: '1rem' }}>To:</p>
-      <select value={tgtLang} onChange={handleTgtLangChange}>
+      <p style={{ fontSize: '1.2rem' }}>To:</p>
+      <select style={{ fontSize: '1rem' , cursor: 'none' }} value={tgtLang} onChange={handleTgtLangChange}>
         {languageOptions.map((language: { value: string; label: string }) => (
-          <option key={language.value} value={language.value}>
+          <option style={{ fontSize: '1rem' , cursor: 'none' }} key={language.value} value={language.value}>
             {language.label}
           </option>
         ))}
@@ -139,17 +143,23 @@ const OnnxInference: React.FC = () => {
       </div>
 
       <div>
-        <button onClick={handleGenerate} disabled={isLoading}>
+        <button className='generate-button' onClick={handleGenerate} disabled={isLoading || !modelLoaded || !inputText.trim()}>
           {isLoading ? 'Loading model...' : 'Generate'}
         </button>
       
       </div>
       <div>
         {result && (
-        <p>
-          Result: {Array.isArray(result) ? result[0]?.translation_text : result.translation_text}
-        </p>
-      )}
+          <p>
+            Result: {Array.isArray(result) ? result[0]?.translation_text : result.translation_text}
+          </p>
+        )}
+        {error && (
+          <div style={{ color: 'red', marginTop: 16, fontSize: '1.2rem', maxWidth: 600, textAlign: 'center', whiteSpace: 'pre-wrap' }}>
+            Error: {error}
+          </div>
+        )}
+      
       </div>
   
     </div>

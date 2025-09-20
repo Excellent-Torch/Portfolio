@@ -9,7 +9,7 @@ export interface TargetCursorProps {
 }
 
 const TargetCursor: React.FC<TargetCursorProps> = ({
-  targetSelector = '.cursor-target',
+  targetSelector = 'a,button,[role="button"],input[type="button"],input[type="submit"],input[type="reset"]',
   spinDuration = 4,
   hideDefaultCursor = true
 }) => {

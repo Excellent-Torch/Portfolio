@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  cursor: none !important;
 }
 
 h1 {
@@ -379,6 +380,10 @@ p {
 
 /* Download Button */
 
+.download-button * {
+  cursor: none !important;
+}
+
 .download-button {
   background-color: #ffffff;
   color: #3abb3f;
@@ -386,7 +391,6 @@ p {
   border: none;
   border-radius: 5px;
   border-color: #3abb3f;
-  cursor: pointer;
   font-size: 25px;
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -436,35 +440,43 @@ p {
 
 /* Generate Button */
 
+
 .generate-button {
-  background-color: #ffffff;
-  color: #3abb3f;
+  cursor: none !important;
+  background-color: #1d1d1d;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  border-color: #3abb3f;
-  cursor: pointer;
+  border-color: #115cff;
+  
   font-size: 25px;
-
+  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease-in-out;
-
-  background-color: #ffffff;
+ 
+  
   transition: background-color 0.2s ease-in-out;
   transition: font-size 0.2s ease-in-out;
 }
 
 .generate-button:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  background-color: #3e8e4199;
+  background-color: #585858;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 34px;
 }
 
 .generate-button.loading {
   background-color: #ccc;
   color: #666;
   cursor: wait;
+}
+
+.generate-button:disabled {
+  background-color: #555;
+  color: #999;
+  cursor: not-allowed;
 }
 
 .loading-spinner {
@@ -492,13 +504,16 @@ p {
 }
 
 /* Contact Me Link */
+.contact-me-link,
+.contact-me-link * {
+  cursor: none !important;
 
-.contact-me-link
-{
   text-decoration: none;
   font-size: 25px;
   transition: font-size 350ms ease-in-out;
 }
+
+
 
 .contact-me-link:hover {
   text-decoration: none;
@@ -529,6 +544,11 @@ p {
 }
 
 /* Chat Widget */
+
+.chat-widget * {
+  cursor: none !important;
+}
+
 .chat-widget {
   position: fixed;
   
@@ -538,6 +558,7 @@ p {
   flex-direction: column;
   user-select: auto;
   resize: none;
+  
 }
 
 .chat-widget button {
