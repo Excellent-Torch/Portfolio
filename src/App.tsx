@@ -33,6 +33,10 @@ import gifDance from './assets/dancing.gif';
 import TargetCursor from './components/TargetCursor';
 //import Shuffle from './components/ShuffleText';
 
+function isMobile() {
+  return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+}
+
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -95,11 +99,13 @@ const App: React.FC = () => {
   return (
     
     <HashRouter>
+    {!isMobile() && (
       <TargetCursor 
               targetSelector='a,button,[role="button"],input[type="button"],input[type="submit"],input[type="reset"]'
               spinDuration={4}
               hideDefaultCursor={true}
             />
+            )}
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
       <Routes>
