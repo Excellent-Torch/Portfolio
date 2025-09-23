@@ -31,7 +31,7 @@ import gifDance from './assets/dancing.gif';
 
 //Components from ReactBits
 import TargetCursor from './components/TargetCursor';
-import Shuffle from './components/ShuffleText';
+//import Shuffle from './components/ShuffleText';
 
 
 const App: React.FC = () => {
@@ -51,7 +51,7 @@ const App: React.FC = () => {
       setIsLoading(true);
       // Download Logic
 
-      const url = 'https://ia600909.us.archive.org/13/items/ishan-madhuranga-cv_20250915/Ishan_Madhuranga_CV.pdf';
+      const url = 'https://ia601009.us.archive.org/9/items/ishan-madhuranga-cv_20250923/Ishan_Madhuranga_CV.pdf';
       const filename = 'Ishan_Maduranga_CV.pdf';
 
       const link = document.createElement('a');
@@ -122,22 +122,8 @@ const App: React.FC = () => {
               <h1>
                 <div className="typewriter-container-headline">
                  
-                  <Shuffle
-              text="Excellent Torch"
-              shuffleDirection="right"
-              duration={0.35}
-              animationMode="evenodd"
-              shuffleTimes={1}
-              ease="power3.out"
-              stagger={0.2}
-              threshold={0.1}
-              triggerOnce={false}
-              triggerOnHover={true}
-              loop={true}
-              loopDelay={1.5}
-              respectReducedMotion={true}
-              
-            />
+                  
+            <TypewriterText text="Excellent Torch" speed={200} showCaret={false} loop={false}/>
                 </div>
               </h1>
               
