@@ -48,27 +48,6 @@ const App: React.FC = () => {
     setAnimate(true);
   };
 
-  
-  const [isLoading, setIsLoading] = useState(false);
-  
-  const handleDownload = () => {
-      setIsLoading(true);
-      // Download Logic
-
-      const url = 'https://ia601009.us.archive.org/9/items/ishan-madhuranga-cv_20250923/Ishan_Madhuranga_CV.pdf';
-      const filename = 'Ishan_Maduranga_CV.pdf';
-
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename;
-      link.click();
-
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000); // Simulate a 2-second download
-  };
-    
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -185,27 +164,13 @@ const App: React.FC = () => {
                     
                 </div> 
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                  <button
-                        className={`download-button ${isLoading ? 'loading' : ''}`}
-                        onClick={handleDownload}
-                        style={{ marginTop: '5px',marginBottom: '5px'}}
-                      >
-                        {isLoading ? (
-                          <div className="loading-spinner">
-                            <div className="spinner" />
-                          </div>
-                        ) : (
-                          <span>Download CV</span>
-                        )}
-                    </button>
-                    <span> </span>
                     {animate ? (
                       <br >
                       </br>
                     ) : (
                       null
                     )}
-                    <p><span>Or&nbsp;</span></p>
+                
                     <a href="#/contact" className='contact-me-link'> Contact Me <span className="blink-slow">:)</span> </a>
                
                 </div>

@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import '../css/App.css';
 
 import TypewriterText from '../components/TypewriterText';
-import gifContact from '../assets/contact.gif';
+
 
 
 const Contact: React.FC = () => {
@@ -35,31 +35,15 @@ const Contact: React.FC = () => {
             <br></br>
             <span> </span>
             <div style={{ textAlign: 'center', fontSize: '20px' }}>
-            <a href="https://github.com/Excellent-Torch" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: 'gray' }}>GitHub</a>
+            <a href="https://github.com/Excellent-Torch" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: 'white', backgroundColor: 'gray' }}>GitHub</a>
             <span> </span>
-            <a href="https://www.linkedin.com/in/excellent-torch/" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: 'lightblue' }}>LinkedIn</a>
+            <a href="https://www.linkedin.com/in/excellent-torch/" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: 'darkblue' }}>LinkedIn</a>
             <span> </span>
             <a href="https://www.youtube.com/@ExcellentTorch" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: 'red' }}>YouTube</a>
             <span> </span>
             <a href="https://www.instagram.com/excellent_torch/" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: '#E1306C' }}>Instagram</a>
             </div>      
             </h3>
-        
-        </motion.div>
-
-        <motion.div className="image-content"
-        ref={ref}
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 } }
-        transition={{ duration: 1 }}
-        >
-
-          <img
-            src={gifContact}
-            loading="lazy"
-            style={{ width: '600px', height: '360px', marginTop: '25px', marginBottom: '25px', alignItems: 'center', alignSelf: 'center' }}
-            alt="GIF 2"
-          />
         
         </motion.div>
 
