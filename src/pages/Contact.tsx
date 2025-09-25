@@ -43,11 +43,8 @@ const Contact: React.FC = () => {
             <span> </span>
             <a href="https://www.instagram.com/excellent_torch/" target="_blank" rel="noopener noreferrer" className="contact-me-link" style={{ color: '#E1306C' }}>Instagram</a>
             </div>      
-            </h3>
-        
+            </h3>        
         </motion.div>
-
-
     </section>
  
   );

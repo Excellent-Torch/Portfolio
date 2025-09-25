@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -9,10 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import '../css/App.css';
 
 import gifRodGameplay from '../assets/rodgameplay.gif';
-import gifFNST from '../assets/fnst.gif';
 import TypewriterText from '../components/TypewriterText';
 import gifSelfCar from '../assets/selfcar.gif';
-
 const Projects: React.FC = () => {
     const { ref, inView } = useInView({ rootMargin: '1000px' });
 
@@ -57,17 +51,20 @@ const Projects: React.FC = () => {
         transition={{ duration: 1 }}
         >
 
-          <img
-            src={gifFNST}
-            loading="lazy"
-            style={{ width: '600px', height: '360px', marginTop: '50px', marginBottom: '50px' }}
-            alt="GIF 2"
-          />
+          <div style={{ width: '800px', height: '420px', marginTop: '10px', marginBottom: '50px' }}>
+            <iframe
+              width="600"
+              height="360"
+              src="https://www.youtube.com/embed/zCLsP2nrR_c?autoplay=1&mute=1&controls=1&rel=0"
+              title="Fast Neural Style Transfer Demo"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              style={{ borderRadius: '12px', width: '100%', height: '100%' }}
+            />
+          </div>
         
         </motion.div>
-
-
-       
 
         <motion.div className="text-content"
         ref={ref}
