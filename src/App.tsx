@@ -21,7 +21,7 @@ const RunesOfDemons = React.lazy(() => import('./pages/RunesOfDemons'));
 const OnnxInference = React.lazy(() => import('./pages/OnnxInference'));
 
 
-import aboutImage from './assets/aboutImage.jpg'; 
+import aboutImage from './assets/aboutImage3.png'; 
 import gifDoom from './assets/doom.gif';
 //import gifUnreal from './assets/unreal.gif';
 import gifDeveloper from './assets/developer.gif';
@@ -36,7 +36,6 @@ import TargetCursor from './components/TargetCursor';
 function isMobile() {
   return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
 }
-
 
 const App: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement[]>([]);
@@ -116,7 +115,7 @@ const App: React.FC = () => {
                 <div className="typewriter-container-subline">
                   <TypewriterText text="AI/ML" speed={600} showCaret={true} loop={true}/>
                 </div>
-                  <TypewriterText text="Developer" speed={100} showCaret={false} loop={false}/>
+                  <TypewriterText text="Engineer" speed={100} showCaret={false} loop={false}/>
               </h2>
               </div>
              
@@ -146,11 +145,11 @@ const App: React.FC = () => {
 
                   </motion.div>
                 <p>
-                  Specialized in <strong> Artificial Intelligence</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> ,  I am passionate about developing innovative and scalable AI solutions that create real world impact. 
+                  Specialized in <strong> Artificial Intelligence/Machine Learning</strong><img src={gifAI} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} /> ,  I am passionate about developing innovative and scalable AI solutions that create real world impact. 
                   With a master’s degree in AI and hands on experience in deep learning, computer vision, and reinforcement learning, I focus specially on building efficient models for real time applications.
                 </p>
                 <p>
-                  I have worked as an <strong>AI Engineer Intern</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} />, contributing to research on GANs, autonomous systems, and API-based AI services, and as a <strong>Freelance AI/ML Specialist</strong>, delivering client projects involving model deployment, computer vision, and IoT integration. Most recently, I worked as an <strong>AI Gameplay Programmer</strong> Intern, where I implemented AI behavior mechanics and optimized performance for interactive environments.
+                  I have worked as an <strong>AI Engineer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} />, contributing to research on GANs, autonomous systems, and API-based AI services, and as a <strong>Freelance AI/ML Specialist</strong>, delivering client projects involving model deployment, computer vision, and IoT integration. Most recently, I worked as an <strong>Lead AI Gameplay Engineer</strong> Intern, where I implemented AI behavior mechanics and optimized performance for interactive environments.
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   

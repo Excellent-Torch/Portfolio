@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
 
             <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Experience" speed={400} showCaret={true} loop={false} /></h2>        
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              Lead AI Gameplay Programmer, Sleepless Inc. 
+              Lead AI Gameplay Engineer, Sleepless Inc. 
               <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Dublin, Ireland. 2024 - 2025</div>
               
             </h3>
