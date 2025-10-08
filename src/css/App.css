@@ -846,8 +846,48 @@ p {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 5rem;
-    padding-left: 5rem;
+    padding-left: 1rem;
   
+  }
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    width: 100vw;
+    min-height: 60vh;
+    box-sizing: border-box;
+    
+  }
+
+  .contact .text-content {
+    width: 90vw;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .contact h1,
+  .contact h2,
+  .contact h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contact p {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section-contact {
+    background-color: rgba(0, 0, 255, 0.12);
+    padding: 1rem 0;
+    width: 100vw;
+    box-sizing: border-box;
   }
   
 

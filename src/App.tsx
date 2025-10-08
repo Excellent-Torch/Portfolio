@@ -149,7 +149,7 @@ const App: React.FC = () => {
                   With a master’s degree in AI and hands on experience in deep learning, computer vision, and reinforcement learning, I focus specially on building efficient models for real time applications.
                 </p>
                 <p>
-                  I have worked as an <strong>AI Engineer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} />, contributing to research on GANs, autonomous systems, and API-based AI services, and as a <strong>Freelance AI/ML Specialist</strong>, delivering client projects involving model deployment, computer vision, and IoT integration. Most recently, I worked as an <strong>Lead AI Gameplay Engineer</strong> Intern, where I implemented AI behavior mechanics and optimized performance for interactive environments.
+                  I have worked as an <strong>AI Engineer</strong><img src={gifDeveloper} alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '4px' }} />, contributing to research on GANs, autonomous systems, and API-based AI services, and as a <strong>Freelance AI/ML Specialist</strong>, delivering client projects involving model deployment, computer vision, and IoT integration. Most recently, I worked as an <strong>Lead AI Gameplay Engineer</strong>, where I implemented AI behavior mechanics and optimized performance for interactive environments.
                 <img src={gifDoom} loading="lazy" alt="GIF 1" style={{ width: '25px', height: '25px', marginLeft: '1px' }} />
                 </p>
                   

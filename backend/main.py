@@ -17,8 +17,6 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import PromptTemplate
 
-
-
 load_dotenv()
 
 app = FastAPI(title="Portfolio AI Assistant")
@@ -87,7 +85,7 @@ def initialize_rag():
     # 5. Initialize Groq LLM
     llm = ChatGroq(
         groq_api_key=os.getenv("GROQ_API_KEY"),
-        model_name="mixtral-8x7b-32768",  # or "llama2-70b-4096"
+        model_name="llama-3.1-8b-instant",  # Adjust for your model
         temperature=0.3,
         max_tokens=1024
     )
@@ -165,7 +163,7 @@ async def chat(request: ChatRequest):
     
     try:
         # Get response from RAG chain
-        result = qa_chain({
+        result = qa_chain.invoke({
             "question": request.message,
             "chat_history": sessions[session_id].load_memory_variables({})["chat_history"]
         })
