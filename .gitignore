@@ -24,12 +24,11 @@ dist-ssr
 *.sw?
 .env
 
-backend/__pycache__/
+backend/*
 *.pyc
 *.pyo
 *.pyd
 .Python
-backend/chroma_db/
+
 *.log
 .DS_Store
-backend/portenv/
