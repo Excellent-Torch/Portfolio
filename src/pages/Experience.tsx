@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 
 import { Canvas } from "@react-three/fiber";
@@ -7,6 +5,8 @@ import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
 //import { LogoModel } from "./LogoModel";
 import { SleeplessModel } from "../components/Sleepless";
 // 3D Stuff End
+
+import IconBar from '../components/IconBar';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -16,129 +16,103 @@ import '../css/App.css';
 //import gifRodGameplay from '../assets/rodgameplay.gif';
 //import gifFNST from '../assets/fnst.gif';
 import TypewriterText from '../components/TypewriterText';
+// ...existing code...
 
 const Experience: React.FC = () => {
-    const { ref: ref1 } = useInView();
-    const { ref: ref2 } = useInView();
+    const { ref: listRef } = useInView();
 
-    //const [animate, setAnimate] = useState(false);
-    
-    //const handleTouchStart = () => {
-    //    // Trigger the animation on touch start
-    //    setAnimate(true);
-    //};
+    const experiences = [
+      {
+        role: 'Lead AI Gameplay Engineer',
+        company: 'Sleepless Inc.',
+        location: 'Dublin, Ireland',
+        period: '2024 - 2025',
+        summary:
+          'Designing, developing, and optimizing interactive gameplay experiences using Unreal Engine 5. Implemented mechanics, Blueprints and C++ systems, and performance optimisations.',
+        points: [
+          'Developed and optimised gameplay mechanics and AI behaviours.',
+          'Collaborated with designers and engineers to create immersive experiences.',
+          'Debugged and improved performance across target platforms.',
+          'Adopted latest UE5 features and best practices.'
+        ]
+      },
+      {
+        role: 'Artificial Intelligence Engineer',
+        company: 'BCAS Campus',
+        location: 'Colombo, Sri Lanka',
+        period: '2021 - 2023',
+        summary:
+          'Contributed to research projects involving GANs, autonomous systems and reinforcement learning. Built APIs and documented model workflows.',
+        points: [
+          'Participated in academic research for generative and RL systems.',
+          'Built RESTful APIs with FastAPI/Flask to serve AI components.',
+          'Documented training, evaluation and deployment processes.'
+        ]
+      },
+      {
+        role: 'Freelance AI/ML Developer',
+        company: 'Upwork & Direct Contracts',
+        location: 'Colombo, Sri Lanka',
+        period: '2019 - Present',
+        summary:
+          'Delivered ML solutions for clients: deep learning, computer vision, data analytics and model deployment.',
+        points: [
+          'Delivered AI/ML solutions for production and research clients.',
+          'Built and deployed deep learning models and pipelines.',
+          'Optimised models for real-time and edge applications.'
+        ]
+      }
+    ];
+
+    const companyLogos = [
+      { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
+      { src: '/src/assets/logos/sleepless.svg', alt: 'BCAS Campus' },
+      { src: '/src/assets/logos/sleepless.svg', alt: 'Upwork' }
+    ];
 
   return (
-    <section className="experience">
+    <section className="experience page-center">
 
-        <motion.div className="text-content"
-         ref={ref1}
+      <motion.div className="text-content"
+         ref={listRef}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
          transition={{ duration: 1 }}
-          >
+      >
+        <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}>
+          <TypewriterText text="Experience" speed={400} showCaret={true} loop={false} />
+        </h2>
 
-            <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Experience" speed={400} showCaret={true} loop={false} /></h2>        
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              Lead AI Gameplay Engineer, Sleepless Inc. 
-              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Dublin, Ireland. 2024 - 2025</div>
-              
-            </h3>
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              
-            </h3>
-            <p style={{ textAlign: 'left', fontSize: '20px' }}>
-            Responsible for designing, developing, and optimizing interactive game play experiences using the latest Unreal Engine 5. My role involves implementing game mechanics, scripting functionalities using Blueprints and C++, and ensuring smooth performance across platforms.
-            </p>
-            <div style={{ textAlign: 'left', fontSize: '20px' }}>
-              <ul>
-                <li>Developing and optimizing game-play mechanics, AI behaviors, and interactive elements.</li>
-                <li>Collaborating with designers and other developers to create immersive experiences.</li>
-                <li>Debugging and optimizing game performance for efficiency and stability.</li>
-                <li>Staying up to date with the latest Unreal Engine advancements and best practices.</li>
-              </ul>
-            </div>
-
-            
-        </motion.div>
-
-        <Canvas className="three-canvas" gl={{ alpha: true }} camera={{ position: [1, 1, 1], fov: 90 }}>
-
-            <OrbitControls  />
-            <directionalLight position={[5, 5, 5]} intensity={2} color={"white"} />
-            <Float speed={2} rotationIntensity={1.5} floatIntensity={1.5}>
-              <SleeplessModel />
-            </Float>
-            <ContactShadows rotation-x={Math.PI / 2} position={[0, -1, 0]} opacity={0.5} blur={2} scale={50} far={20} />  
-
-        </Canvas>
-        
-
-       
-
-         <motion.div className="text-content"
-         ref={ref2}
-         initial={{ opacity: 0, y: 50 }}
-         animate={{ opacity: 1, y: 0 } }
-         transition={{ duration: 1 }}
-          >
-
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-            Artificial Intelligence Engineer, BCAS Campus
-              <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2021 - 2023</div>
-              
-            </h3>
-            <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-              
-            </h3>
-            <p style={{ textAlign: 'left', fontSize: '20px' }}>
-
-            </p>
-            <div style={{ textAlign: 'left', fontSize: '20px' }}>
-              <ul>
-                <li>Participated in academic research initiatives, contributing to projects involving generative adversarial networks (GANs), autonomous systems, and reinforcement learning.</li>
-                <li>Collaborated on building RESTful APIs using FastAPI and Flask to serve AI functionalities to front-end clients.</li>
-                <li>Documented all development processes, including model training, evaluation, and deployment strategies, in line with academic and industry standards.</li>
-              </ul>
-            </div>
-        
-        </motion.div>
-
-        <motion.div className="text-content"
-                ref={ref2}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 } }
-                transition={{ duration: 1 }}
-                  >
-
-                    <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-                    Freelance AI & Machine Learning Specialist, Fiverr & Direct Contracts
-                      <div style={{ textAlign: 'left', fontSize: '16px', marginTop: '10px' }}>Colombo, Sri Lanka. 2019 - 2025</div>
-                      
-                    </h3>
-                    <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
-                      
-                    </h3>
-                    <p style={{ textAlign: 'left', fontSize: '20px' }}>
-
-                    </p>
-                    <div style={{ textAlign: 'left', fontSize: '20px' }}>
-                      <ul>
-                        <li>Delivered AI and ML solutions to clients via Fiverr and direct contracts.</li>
-                        <li>Built and deployed models for deep learning, computer vision, and data analytics
-        tasks.</li>
-                        <li>Deep Learning, Computer Vision, Data Preprocessing and Model
-        Deployment using Amazon ECS/ Azure Kubernetes</li>
-                        <li>Conducted model optimization and integration for real-time applications and
-        IOT/Client based devices.</li>
-                      </ul>
-                    </div>
+        <ul style={{ listStyle: 'none', padding: 0, marginTop: 24 }}>
+          {experiences.map((exp, idx) => (
+            <li key={idx} style={{ marginBottom: 22 }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
                 
-                </motion.div>
-       
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
+                    <h3 style={{ margin: 0, fontSize: 20 }}>{exp.role}, <span style={{ color: '#9ca3af', fontWeight: 600 }}>{exp.company}</span></h3>
+                    <div style={{ color: '#9ca3af', fontSize: 14 }}>{exp.location} · {exp.period}</div>
+                  </div>
+
+                  <p style={{ marginTop: 8, marginBottom: 8, fontSize: 16 }}>{exp.summary}</p>
+
+                  <ul style={{ margin: 0, paddingLeft: 18 }}>
+                    {exp.points.map((pt, i) => (
+                      <li key={i} style={{ marginBottom: 6, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+                        <span style={{ color: '#93c5fd', minWidth: 18, lineHeight: '1.2' }}>▸</span>
+                        <span style={{ fontSize: 16 }}>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    
     </section>
- 
   );
 };
-
+//<IconBar logos={companyLogos} speed={5} height={68} /> 
 export default Experience;

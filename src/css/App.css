@@ -253,6 +253,107 @@ p {
   text-align: center;
 }
 
+/* Center layout helper used by pages */
+.page-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* horizontal center */
+  justify-content: center; /* vertical centering within section if height allows */
+  text-align: center;     /* headings and inline text centered */
+  padding: 48px 16px;     /* spacing on desktop and mobile */
+  box-sizing: border-box;
+}
+
+/* constrain content width for readable lines */
+.page-center .text-content {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* keep list items left aligned for readability */
+.page-center ul {
+  text-align: left;
+}
+
+/* make nested lists slightly indented and responsive */
+.page-center ul ul {
+  padding-left: 20px;
+}
+
+
+/* Icon bar centered viewport + marquee */
+.company-icon-bar{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center; /* center viewport on page */
+  pointer-events: auto;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 8px 0;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.35);
+}
+
+/* viewport constrains width and centers the animated track */
+.company-icon-viewport {
+  width: 100%;
+  max-width: 1200px; /* adjust as needed */
+  overflow: hidden;
+  display: block;
+}
+
+/* animated track */
+.company-icon-marquee{
+  display: flex;
+  gap: 38px;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* individual logo */
+.company-logo{
+  height: 40px;
+  width: auto;
+  display: block;
+  filter: grayscale(100%) opacity(0.85);
+  transition: transform .18s ease, filter .18s ease, opacity .18s ease;
+}
+
+.company-icon-link, .company-icon-item{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+}
+
+/* hover/focus */
+.company-icon-link:hover .company-logo,
+.company-icon-item:hover .company-logo,
+.company-icon-link:focus .company-logo {
+  filter: none;
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+/* pause animation on hover of viewport */
+.company-icon-viewport:hover .company-icon-marquee,
+.company-icon-viewport.touching .company-icon-marquee {
+  animation-play-state: paused;
+}
+
+/* marquee keyframes: move left by 50% (content duplicated) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 .contact
 {
   display: flex;
@@ -709,6 +810,9 @@ p {
   cursor: se-resize;
 }
 
+/* avoid covering content: utility class to add bottom padding */
+.page-with-bottom-bar { padding-bottom: 96px; }
+
 /* MOBILE VIEW STUFF */
 @media (pointer: coarse),(max-width: 768px) {
 
@@ -849,6 +953,15 @@ p {
     padding-left: 1rem;
   
   }
+
+  .page-center { padding: 28px 12px;}
+  .page-center .text-content { max-width: 92vw; }
+  .page-center h2 { font-size: 1.6rem; }
+  .page-center h3 { font-size: 1.05rem; }
+
+  .company-icon-bar{ height: 56px; padding: 6px 0; }
+  .company-logo{ height: 32px; }
+
   .contact {
     flex-direction: column;
     align-items: center;
