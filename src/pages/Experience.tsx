@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Canvas } from "@react-three/fiber";
-import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
+//import { Canvas } from "@react-three/fiber";
+//import { ContactShadows, Float, OrbitControls } from "@react-three/drei";
 //import { LogoModel } from "./LogoModel";
-import { SleeplessModel } from "../components/Sleepless";
+//import { SleeplessModel } from "../components/Sleepless";
 // 3D Stuff End
 
-import IconBar from '../components/IconBar';
+//import IconBar from '../components/IconBar';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -64,11 +64,11 @@ const Experience: React.FC = () => {
       }
     ];
 
-    const companyLogos = [
-      { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
-      { src: '/src/assets/logos/sleepless.svg', alt: 'BCAS Campus' },
-      { src: '/src/assets/logos/sleepless.svg', alt: 'Upwork' }
-    ];
+   // const companyLogos = [
+   //   { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
+   //   { src: '/src/assets/logos/sleepless.svg', alt: 'BCAS Campus' },
+   //   { src: '/src/assets/logos/sleepless.svg', alt: 'Upwork' }
+   // ];
 
   return (
     <section className="experience page-center">
