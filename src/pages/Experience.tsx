@@ -6,20 +6,31 @@ import React from 'react';
 //import { SleeplessModel } from "../components/Sleepless";
 // 3D Stuff End
 
-//import IconBar from '../components/IconBar';
+import IconBar from '../components/IconBar';
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+import BlurText from "../components/BlurText";
+
+
+
 
 import '../css/App.css';
 
 //import gifRodGameplay from '../assets/rodgameplay.gif';
 //import gifFNST from '../assets/fnst.gif';
-import TypewriterText from '../components/TypewriterText';
-// ...existing code...
+//import TypewriterText from '../components/TypewriterText';
+
 
 const Experience: React.FC = () => {
     const { ref: listRef } = useInView();
+
+    const handleAnimationComplete = () => {
+
+        console.log('Animation completed!');
+
+    };
 
     const experiences = [
       {
@@ -64,11 +75,12 @@ const Experience: React.FC = () => {
       }
     ];
 
-   // const companyLogos = [
-   //   { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
-   //   { src: '/src/assets/logos/sleepless.svg', alt: 'BCAS Campus' },
-   //   { src: '/src/assets/logos/sleepless.svg', alt: 'Upwork' }
-   // ];
+    const companyLogos = [
+      { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
+      { src: '/src/assets/logos/bcas.png', alt: 'BCAS Campus' },
+      { src: '/src/assets/logos/upwork.png', alt: 'Upwork' },
+      { src: '/src/assets/logos/fiverr.png', alt: 'Fiverr' }
+    ];
 
   return (
     <section className="experience page-center">
@@ -79,9 +91,18 @@ const Experience: React.FC = () => {
          animate={{ opacity: 1, y: 0 } }
          transition={{ duration: 1 }}
       >
-        <h2 style={{ textAlign: 'center', color: 'lightblue', textShadow: '0.1em 0.1em 0.2em gray' }}>
-          <TypewriterText text="Experience" speed={400} showCaret={true} loop={false} />
+        <h2 style={{ textAlign: 'center', color: '#ffffffff', textShadow: '0.1em 0.1em 0.4em #1b68f8ff' }}>
+            <BlurText
+              text="Experience"
+              delay={150}
+              animateBy="letters"
+              direction="top"
+              onAnimationComplete={handleAnimationComplete}
+              className='page-title'             
+            />
         </h2>
+
+        
 
         <ul style={{ listStyle: 'none', padding: 0, marginTop: 24 }}>
           {experiences.map((exp, idx) => (
@@ -90,8 +111,8 @@ const Experience: React.FC = () => {
                 
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
-                    <h3 style={{ margin: 0, fontSize: 20 }}>{exp.role}, <span style={{ color: '#9ca3af', fontWeight: 600 }}>{exp.company}</span></h3>
-                    <div style={{ color: '#9ca3af', fontSize: 14 }}>{exp.location} · {exp.period}</div>
+                    <h3 style={{ margin: 0, fontSize: 20 }}>{exp.role}, <span style={{ color: '#72a3f7ff', fontWeight: 600 }}>{exp.company}</span></h3>
+                    <div style={{ color: '#72a3f7ff', fontSize: 14 }}>{exp.location} · {exp.period}</div>
                   </div>
 
                   <p style={{ marginTop: 8, marginBottom: 8, fontSize: 16 }}>{exp.summary}</p>
@@ -99,7 +120,7 @@ const Experience: React.FC = () => {
                   <ul style={{ margin: 0, paddingLeft: 18 }}>
                     {exp.points.map((pt, i) => (
                       <li key={i} style={{ marginBottom: 6, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                        <span style={{ color: '#93c5fd', minWidth: 18, lineHeight: '1.2' }}>▸</span>
+                        <span style={{ color: '#707070ff', minWidth: 18, lineHeight: '1.2' }}>•</span>
                         <span style={{ fontSize: 16 }}>{pt}</span>
                       </li>
                     ))}
@@ -109,10 +130,11 @@ const Experience: React.FC = () => {
             </li>
           ))}
         </ul>
+         
       </motion.div>
-    
+   <IconBar logos={companyLogos} speed={25} height={68} /> 
     </section>
   );
 };
-//<IconBar logos={companyLogos} speed={5} height={68} /> 
+
 export default Experience;

@@ -5,12 +5,22 @@ import { useInView } from 'react-intersection-observer';
 import '../css/App.css';
 
 import gifRodGameplay from '../assets/rodgameplay.gif';
-import TypewriterText from '../components/TypewriterText';
+import BlurText from "../components/BlurText";
 import gifSelfCar from '../assets/selfcar.gif';
+
+//import TypewriterText from '../components/TypewriterText';
+
+
 const Projects: React.FC = () => {
     const { ref, inView } = useInView({ rootMargin: '1000px' });
 
     const [animate, setAnimate] = useState(false);
+
+    const handleAnimationComplete = () => {
+
+        console.log('Animation completed!');
+
+    };
     
     const handleTouchStart = () => {
         // Trigger the animation on touch start
@@ -27,7 +37,16 @@ const Projects: React.FC = () => {
          transition={{ duration: 1 }}
           >
 
-            <h2 style={{ textAlign: 'center', color: 'lightgreen', textShadow: '0.1em 0.1em 0.2em gray' }}><TypewriterText text="Projects" speed={400} showCaret={true} loop={false} /></h2>        
+            <h2 style={{ textAlign: 'center', color: '#ffffffff', textShadow: '0.1em 0.1em 0.4em #059418ff' }}>
+              <BlurText
+                text="Projects"
+                delay={150}
+                animateBy="letters"
+                direction="bottom"
+                onAnimationComplete={handleAnimationComplete}
+                className='page-title'             
+              />
+            </h2>        
             <h3 style={{ textAlign: 'left', fontSize: '25px', marginTop: '20px' }}>
               Real-Time Fast Neural Style Transfer in a 3D Environment
             </h3>

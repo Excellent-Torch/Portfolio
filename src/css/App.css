@@ -281,6 +281,12 @@ p {
   padding-left: 20px;
 }
 
+.page-title {
+  font-size: 42px;
+  margin-bottom: 14px;
+  justify-content: center;
+}
+
 
 /* Icon bar centered viewport + marquee */
 .company-icon-bar{
@@ -292,7 +298,7 @@ p {
   display: flex;
   justify-content: center; /* center viewport on page */
   pointer-events: auto;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0);
   backdrop-filter: blur(6px);
   padding: 8px 0;
   box-shadow: 0 -8px 24px rgba(0,0,0,0.35);
@@ -300,18 +306,17 @@ p {
 
 /* viewport constrains width and centers the animated track */
 .company-icon-viewport {
+ /* adjust as needed */
   width: 100%;
-  max-width: 1200px; /* adjust as needed */
   overflow: hidden;
-  display: block;
 }
 
 /* animated track */
 .company-icon-marquee{
   display: flex;
-  gap: 38px;
+  width: 100%;
+  gap: 48px;
   align-items: center;
-  white-space: nowrap;
   will-change: transform;
   animation-name: marquee;
   animation-timing-function: linear;
@@ -320,7 +325,7 @@ p {
 
 /* individual logo */
 .company-logo{
-  height: 40px;
+  height: 50px;
   width: auto;
   display: block;
   filter: grayscale(100%) opacity(0.85);
@@ -331,7 +336,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 6px;
+  padding: 2px 12px;
 }
 
 /* hover/focus */
@@ -351,8 +356,8 @@ p {
 
 /* marquee keyframes: move left by 50% (content duplicated) */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 .contact
 {
