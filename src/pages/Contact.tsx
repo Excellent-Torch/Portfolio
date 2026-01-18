@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import '../css/App.css';
 import TypewriterText from '../components/TypewriterText';
+import Particles from '../components/Particles';
 
 const Contact: React.FC = () => {
   const { ref } = useInView();
@@ -23,6 +24,20 @@ const Contact: React.FC = () => {
         boxSizing: isMobile ? 'border-box' : undefined,
       }}
     >
+
+      <div style={{ position: 'fixed', inset: 0, zIndex: 1, pointerEvents: 'all' }}>
+              <Particles
+                particleColors={["#ffffffff"]}
+                particleCount={400}
+                particleSpread={30}
+                speed={0.1}
+                particleBaseSize={200}
+                moveParticlesOnHover
+                alphaParticles
+                disableRotation
+                pixelRatio={1}
+              />
+      </div>
       <motion.div
         className="text-content"
         ref={ref}

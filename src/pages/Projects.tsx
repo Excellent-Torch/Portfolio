@@ -7,6 +7,7 @@ import '../css/App.css';
 import gifRodGameplay from '../assets/rodgameplay.gif';
 import BlurText from "../components/BlurText";
 import gifSelfCar from '../assets/selfcar.gif';
+import Particles from '../components/Particles';
 
 //import TypewriterText from '../components/TypewriterText';
 
@@ -29,6 +30,19 @@ const Projects: React.FC = () => {
 
   return (
     <section className="projects">
+      <div style={{ position: 'fixed', inset: 0, zIndex: 1, pointerEvents: 'all' }}>
+        <Particles
+          particleColors={["#33d17a"]}
+          particleCount={400}
+          particleSpread={30}
+          speed={0.1}
+          particleBaseSize={200}
+          moveParticlesOnHover
+          alphaParticles
+          disableRotation
+          pixelRatio={1}
+        />
+      </div>
 
         <motion.div className="text-content additional-content"
          ref={ref}

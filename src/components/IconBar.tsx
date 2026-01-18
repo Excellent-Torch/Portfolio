@@ -22,7 +22,11 @@ const IconBar: React.FC<Props> = ({ logos, speed = 20, height = 68 }) => {
       <div className="company-icon-viewport">
         <div
           className="company-icon-marquee"
-          style={{ animationDuration: `${speed}s` }}
+          style={{ 
+            animationDuration: `${speed}s`,
+            display: 'flex',
+            gap: '256px' // Add gap between logos
+          }}
         >
           {loopLogos.map((l, i) => {
             let imgNode: React.ReactNode = null;

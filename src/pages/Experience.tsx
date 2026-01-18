@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import BlurText from "../components/BlurText";
+import Particles from '../components/Particles';
 
 
 
@@ -83,14 +84,28 @@ const Experience: React.FC = () => {
     ];
 
   return (
-    <section className="experience page-center">
-
+    <section className="experience page-center" style={{ position: 'relative' }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 1, pointerEvents: 'all' }}>
+        <Particles
+          particleColors={["#1b68f8ff"]}
+          particleCount={400}
+          particleSpread={30}
+          speed={0.1}
+          particleBaseSize={200}
+          moveParticlesOnHover
+          alphaParticles
+          disableRotation
+          pixelRatio={1}
+        />
+      </div>
+      
       <motion.div className="text-content"
          ref={listRef}
          initial={{ opacity: 0, y: 50 }}
          animate={{ opacity: 1, y: 0 } }
          transition={{ duration: 1 }}
       >
+ 
         <h2 style={{ textAlign: 'center', color: '#ffffffff', textShadow: '0.1em 0.1em 0.4em #1b68f8ff' }}>
             <BlurText
               text="Experience"
@@ -101,22 +116,17 @@ const Experience: React.FC = () => {
               className='page-title'             
             />
         </h2>
-
-        
-
+      
         <ul style={{ listStyle: 'none', padding: 0, marginTop: 24 }}>
           {experiences.map((exp, idx) => (
             <li key={idx} style={{ marginBottom: 22 }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' }}>
                     <h3 style={{ margin: 0, fontSize: 20 }}>{exp.role}, <span style={{ color: '#72a3f7ff', fontWeight: 600 }}>{exp.company}</span></h3>
                     <div style={{ color: '#72a3f7ff', fontSize: 14 }}>{exp.location} · {exp.period}</div>
                   </div>
-
                   <p style={{ marginTop: 8, marginBottom: 8, fontSize: 16 }}>{exp.summary}</p>
-
                   <ul style={{ margin: 0, paddingLeft: 18 }}>
                     {exp.points.map((pt, i) => (
                       <li key={i} style={{ marginBottom: 6, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
@@ -130,9 +140,8 @@ const Experience: React.FC = () => {
             </li>
           ))}
         </ul>
-         
       </motion.div>
-   <IconBar logos={companyLogos} speed={25} height={68} /> 
+      <IconBar logos={companyLogos} speed={25} height={68} /> 
     </section>
   );
 };

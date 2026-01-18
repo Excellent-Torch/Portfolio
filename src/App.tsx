@@ -13,6 +13,7 @@ import background from "./assets/dandan.mp4";
 import TypewriterText from './components/TypewriterText';
 import ChatWidget from "./components/ChatWidget";
 
+
 // Lazy load pages
 const Projects = React.lazy(() => import('./pages/Projects'));
 const Experience = React.lazy(() => import('./pages/Experience'));
