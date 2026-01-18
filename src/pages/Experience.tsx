@@ -14,6 +14,11 @@ import { useInView } from 'react-intersection-observer';
 import BlurText from "../components/BlurText";
 import Particles from '../components/Particles';
 
+// Logos
+import sleeplessLogo from '../assets/logos/sleepless.svg';
+import bcasLogo from '../assets/logos/bcas.png';
+import upworkLogo from '../assets/logos/upwork.png';
+import fiverrLogo from '../assets/logos/fiverr.png';
 
 
 
@@ -77,10 +82,10 @@ const Experience: React.FC = () => {
     ];
 
     const companyLogos = [
-      { src: '/src/assets/logos/sleepless.svg', alt: 'Sleepless' },
-      { src: '/src/assets/logos/bcas.png', alt: 'BCAS Campus' },
-      { src: '/src/assets/logos/upwork.png', alt: 'Upwork' },
-      { src: '/src/assets/logos/fiverr.png', alt: 'Fiverr' }
+      { src: sleeplessLogo, alt: 'Sleepless' },
+      { src: bcasLogo, alt: 'BCAS Campus' },
+      { src: upworkLogo, alt: 'Upwork' },
+      { src: fiverrLogo, alt: 'Fiverr' }
     ];
 
   return (
