@@ -142,7 +142,7 @@ const App: React.FC = () => {
                 >
                 <h1>Greetings!</h1>
                 <h1> 
-                  My Name is Ishan Madhuranga,</h1>
+                  My Name is Don Ishan,</h1>
 
                   </motion.div>
                 <p>
