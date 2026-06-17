@@ -16,7 +16,6 @@ import Particles from '../components/Particles';
 
 // Logos
 import sleeplessLogo from '../assets/logos/sleepless.svg';
-import bcasLogo from '../assets/logos/bcas.png';
 import upworkLogo from '../assets/logos/upwork.png';
 import fiverrLogo from '../assets/logos/fiverr.png';
 
@@ -55,15 +54,17 @@ const Experience: React.FC = () => {
       },
       {
         role: 'Artificial Intelligence Engineer',
-        company: 'BCAS Campus',
+        company: 'Arimac Digital',
         location: 'Colombo, Sri Lanka',
-        period: '2021 - 2023',
+        period: 'May, 2021 to June, 2023',
         summary:
-          'Contributed to research projects involving GANs, autonomous systems and reinforcement learning. Built APIs and documented model workflows.',
+          'Contributed to the development of conversational AI and autonomous navigation features for the Diyazen robot.',
         points: [
-          'Participated in academic research for generative and RL systems.',
-          'Built RESTful APIs with FastAPI/Flask to serve AI components.',
-          'Documented training, evaluation and deployment processes.'
+          
+          'Integrated LLM (BERT) based NLP models with RASA to enable context aware and intelligent user interactions.',
+          'Optimized speech recognition pipelines to improve voice command accuracy and responsiveness.',
+          'Worked with RPLidar S1 and sensor fusion techniques to support accurate environmental mapping and localization.',
+          'Assisted in developing reliable indoor navigation capabilities for autonomous robot movement.'
         ]
       },
       {
@@ -83,7 +84,15 @@ const Experience: React.FC = () => {
 
     const companyLogos = [
       { src: sleeplessLogo, alt: 'Sleepless' },
-      { src: bcasLogo, alt: 'BCAS Campus' },
+      {
+        content: (
+          <svg viewBox="0 0 120 40" width="120" height="40" style={{ verticalAlign: 'middle' }}>
+            <rect width="120" height="40" rx="6" fill="#1a1a2e" />
+            <text x="60" y="26" textAnchor="middle" fill="#72a3f7" fontSize="16" fontWeight="bold" fontFamily="Arial, sans-serif">ARIMAC</text>
+          </svg>
+        ),
+        alt: 'Arimac Digital'
+      },
       { src: upworkLogo, alt: 'Upwork' },
       { src: fiverrLogo, alt: 'Fiverr' }
     ];
