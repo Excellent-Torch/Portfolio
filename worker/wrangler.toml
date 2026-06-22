@@ -1,0 +1,10 @@
+name = "portfolio-chat"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Non-secret config. The Gemini API key is NOT here — set it as a secret with:
+#   npx wrangler secret put GEMINI_API_KEY
+[vars]
+# Comma-separated list of allowed browser origins (CORS).
+# Add your local dev URL and your deployed GitHub Pages URL.
+ALLOWED_ORIGINS = "http://localhost:5173,https://excellenttorch.com"

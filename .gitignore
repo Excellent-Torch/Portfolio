@@ -28,6 +28,11 @@ backend/*
 *.pyc
 *.pyo
 *.pyd
+
+# Cloudflare Worker local secrets (never commit)
+worker/.dev.vars
+worker/.wrangler
+worker/node_modules
 .Python
 
 *.log
