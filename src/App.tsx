@@ -10,6 +10,7 @@ import './css/App.css';
 import background from "./assets/dandan.mp4"; 
 import TypewriterText from './components/TypewriterText';
 import ChatWidget from "./components/ChatWidget";
+import { SfxProvider } from './sfx/SfxContext';
 
 
 // Lazy load pages
@@ -75,6 +76,7 @@ const App: React.FC = () => {
 
   return (
     
+    <SfxProvider>
     <HashRouter>
     {!isMobile() && (
       <TargetCursor 
@@ -260,6 +262,7 @@ const App: React.FC = () => {
       </Routes>
       </Suspense>
     </HashRouter>
+    </SfxProvider>
   );
 };
 

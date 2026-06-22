@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './css/Navbar.css';
-import menuIcon from './assets/dropdown-menu.png'; // Adjust the path as needed
+import menuIcon from './assets/dropdown-menu.png';
 import logoIcon from './assets/torch.gif'
-//import { Link } from 'react-router-dom';
+import { useSfx } from './sfx/SfxContext';
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { play } = useSfx();
 
   const location = useLocation();
   const isRunesPage = /runesofdemons/i.test(location.pathname + location.hash) || /onnxinference/i.test(location.pathname + location.hash);
@@ -14,10 +16,12 @@ const Navbar: React.FC = () => {
 
 
   const toggleMenu = () => {
+    if (isOpen) play('close');
     setIsOpen(!isOpen);
   };
 
   const closeMenu = () => {
+    play('close');
     setIsOpen(false);
   };
 

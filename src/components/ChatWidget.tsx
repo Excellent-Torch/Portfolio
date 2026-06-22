@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, MessageCircle } from "lucide-react";
 import { askGemini, ChatError, type ChatTurn } from "../lib/geminiClient";
+import { useSfx } from "../sfx/SfxContext";
+import RetroTypewriter from "./RetroTypewriter";
 
 const GREETING =
   "Howdy! Ask me anything :) -- My skills, experience, projects, or how to get in touch. 👋";
@@ -14,18 +16,26 @@ const ChatWidget: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
   const [isResizing, setIsResizing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  // Index of the bot message currently being "typed out" by RetroTypewriter.
+  // null = no active typewriter; the message at that index renders static text.
+  const [typingIndex, setTypingIndex] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const resizeRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const greetedRef = useRef(false);
+  const { play } = useSfx();
 
-  const toggleChat = () => setIsOpen((prev) => !prev);
+  const toggleChat = () => {
+    if (isOpen) play('close');
+    setIsOpen((prev) => !prev);
+  };
 
   // Show a one-time greeting when the chat is first opened.
   useEffect(() => {
     if (isOpen && !greetedRef.current) {
       greetedRef.current = true;
       setMessages([{ sender: "bot", text: GREETING }]);
+      setTypingIndex(0);
     }
   }, [isOpen]);
 
@@ -53,14 +63,22 @@ const ChatWidget: React.FC = () => {
 
     try {
       const reply = await askGemini(nextHistory, controller.signal);
-      setMessages((prev) => [...prev, { sender: "bot", text: reply }]);
+      setMessages((prev) => {
+        const next = [...prev, { sender: "bot", text: reply } as ChatTurn];
+        setTypingIndex(next.length - 1);
+        return next;
+      });
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
       const msg =
         err instanceof ChatError
           ? `Sorry, I couldn't reach the assistant right now. ${err.message}`
           : "Sorry, something went wrong. Please try again.";
-      setMessages((prev) => [...prev, { sender: "bot", text: msg }]);
+      setMessages((prev) => {
+        const next = [...prev, { sender: "bot", text: msg } as ChatTurn];
+        setTypingIndex(next.length - 1);
+        return next;
+      });
     } finally {
       if (abortRef.current === controller) abortRef.current = null;
       setIsLoading(false);
@@ -151,36 +169,49 @@ const ChatWidget: React.FC = () => {
              
             }}
           >
-            {messages.map((msg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.85, y: 8 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                style={{
-                  display: 'flex',
-                  justifyContent: msg.sender === "user" ? "flex-end" : "flex-start",
-                  width: '100%',
-                }}
-              >
-                <div
+            {messages.map((msg, i) => {
+              const isBot = msg.sender === "bot";
+              const isTypingThis = isBot && typingIndex === i;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.85, y: 8 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
                   style={{
-                    background: msg.sender === "user" ? "#4a4a4a" : "#1f1f1f",
-                    color: msg.sender === "user" ? "#f5f5f5" : "#d4d4d4",
-                    borderRadius: "18px",
-                    padding: "8px 14px",
-                    margin: "2px 0",
-                    maxWidth: "70%",
-                    boxShadow: msg.sender === "user"
-                      ? "0 2px 8px rgba(0,0,0,0.45)"
-                      : "0 2px 8px rgba(0,0,0,0.55)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    display: 'flex',
+                    justifyContent: msg.sender === "user" ? "flex-end" : "flex-start",
+                    width: '100%',
                   }}
                 >
-                  {msg.text}
-                </div>
-              </motion.div>
-            ))}
+                  <div
+                    className={isBot ? "retro-bubble" : ""}
+                    style={{
+                      background: msg.sender === "user" ? "#4a4a4a" : "#1f1f1f",
+                      color: msg.sender === "user" ? "#f5f5f5" : "#d4d4d4",
+                      borderRadius: "18px",
+                      padding: "8px 14px",
+                      margin: "2px 0",
+                      maxWidth: "70%",
+                      boxShadow: msg.sender === "user"
+                        ? "0 2px 8px rgba(0,0,0,0.45)"
+                        : "0 2px 8px rgba(0,0,0,0.55)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    {isTypingThis ? (
+                      <RetroTypewriter
+                        text={msg.text}
+                        speed={26}
+                        onComplete={() => setTypingIndex((cur) => (cur === i ? null : cur))}
+                      />
+                    ) : (
+                      msg.text
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
             {isLoading && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, y: 8 }}
@@ -189,19 +220,18 @@ const ChatWidget: React.FC = () => {
                 style={{ display: "flex", justifyContent: "flex-start", width: "100%" }}
               >
                 <div
+                  className="retro-bubble retro-typing-indicator"
                   style={{
-                    background: "#1f1f1f",
-                    color: "#d4d4d4",
                     borderRadius: "18px",
                     padding: "8px 14px",
                     margin: "2px 0",
                     maxWidth: "70%",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.55)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    fontStyle: "italic",
                   }}
                 >
-                  Ishan's assistant is typing…
+                  Ishan&apos;s assistant is typing
+                  <span className="dot">.</span>
+                  <span className="dot">.</span>
+                  <span className="dot">.</span>
                 </div>
               </motion.div>
             )}
