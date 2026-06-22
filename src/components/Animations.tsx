@@ -1,3 +1,5 @@
+import { playTypeTick, playTypeReturn } from '../sfx/sounds';
+
 interface TypewriterOptions {
     text: string;
     speed: number;
@@ -27,12 +29,21 @@ interface TypewriterOptions {
   
     private animateText = () => {
       if (this.index < this.text.length) {
+        const char = this.text[this.index];
         this.element.textContent = this.text.slice(0, this.index + 1);
         this.index++;
+        // Play tick sound only for non-whitespace characters
+        if (char !== ' ' && char !== '\n' && char !== '\t') {
+          playTypeTick();
+        }
         this.textInterval = setTimeout(this.animateText, this.speed);
       } else if (this.loop) {
         this.index = 0;
+        playTypeReturn();
         this.textInterval = setTimeout(this.animateText, this.speed);
+      } else {
+        // Non-looping completion — play one final return blip
+        playTypeReturn();
       }
     };
   

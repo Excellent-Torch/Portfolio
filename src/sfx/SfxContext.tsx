@@ -114,9 +114,6 @@ export const SfxProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       const target = resolveInteractive(e.target as Element | null);
       if (!target) return;
 
-      const related = e.relatedTarget as Element | null;
-      const relatedInteractive = resolveInteractive(related);
-
       // If we're moving to another interactive element, onEnter will handle it
       // (and cancel any pending leave). So defer the unhover slightly.
       // If we're moving to nothing/non-interactive, fire unhover after a short
