@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
       }}
     >
 
-      <div style={{ position: 'fixed', inset: 0, zIndex: 1, pointerEvents: 'all' }}>
+      <div style={{ position: 'fixed', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
               <Particles
                 particleColors={["#ffffffff"]}
                 particleCount={400}
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
         >
           Feel free to send me a message here:
           <span> </span>
-          <a style={{ wordBreak: 'break-all', fontSize: isMobile ? '1rem' : undefined }}>contact@excellenttorch.com</a>
+          <a href="mailto:contact@excellenttorch.com" style={{ wordBreak: 'break-all', fontSize: isMobile ? '1rem' : undefined }}>contact@excellenttorch.com</a>
           <br />
           Or Any Social Media Thing Over Here &#128512;<span className="blink-fast">👇</span>
           <br />

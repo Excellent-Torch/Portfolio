@@ -1,6 +1,4 @@
-﻿
-
-import React, { Suspense,useEffect, useRef, useState } from 'react';
+﻿import React, { Suspense,useEffect, useRef, useState } from 'react';
 import { HashRouter, Routes, Route} from 'react-router-dom';
 
 import { motion } from 'framer-motion';
